@@ -133,6 +133,7 @@ export default function Home() {
               <button onClick={() => scrollToSection('about')} className="text-gray-600 hover:text-indigo-600 transition-colors cursor-pointer">About</button>
               <button onClick={() => scrollToSection('skills')} className="text-gray-600 hover:text-indigo-600 transition-colors cursor-pointer">Expertise</button>
               <button onClick={() => scrollToSection('projects')} className="text-gray-600 hover:text-indigo-600 transition-colors cursor-pointer">Portfolio</button>
+              <Link href="/blog" className="text-gray-600 hover:text-indigo-600 transition-colors cursor-pointer flex items-center">Blog</Link>
               <button onClick={() => scrollToSection('contact')} className="text-gray-600 hover:text-indigo-600 transition-colors cursor-pointer">Contact</button>
             </div>
 
@@ -140,6 +141,7 @@ export default function Home() {
             <button 
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="md:hidden w-8 h-8 flex items-center justify-center cursor-pointer hover:bg-gray-100 rounded-lg transition-colors"
+              aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
             >
               <i className={`ri-${isMenuOpen ? 'close' : 'menu'}-line text-gray-600`}></i>
             </button>
@@ -152,6 +154,7 @@ export default function Home() {
                 <button onClick={() => scrollToSection('about')} className="text-left text-gray-600 hover:text-indigo-600 transition-colors cursor-pointer py-2">About</button>
                 <button onClick={() => scrollToSection('skills')} className="text-left text-gray-600 hover:text-indigo-600 transition-colors cursor-pointer py-2">Expertise</button>
                 <button onClick={() => scrollToSection('projects')} className="text-left text-gray-600 hover:text-indigo-600 transition-colors cursor-pointer py-2">Portfolio</button>
+                <Link href="/blog" className="text-left text-gray-600 hover:text-indigo-600 transition-colors cursor-pointer py-2 flex items-center">Blog</Link>
                 <button onClick={() => scrollToSection('contact')} className="text-left text-gray-600 hover:text-indigo-600 transition-colors cursor-pointer py-2">Contact</button>
               </div>
             </div>
@@ -182,8 +185,10 @@ export default function Home() {
               </div>
 
               <p className="text-xl text-gray-600 leading-relaxed max-w-lg animate-fade-in-up delay-200">
-                Building modern web applications with Python, Django, and cutting-edge AI technologies. 
-                I create seamless full-stack solutions and intelligent systems that drive business growth.
+                I'm a passionate developer who loves turning ideas into reality through code. 
+                I specialize in Python, Django, and AI technologies, creating web applications 
+                that are both beautiful and functional. From concept to deployment, I bring 
+                your digital vision to life with clean, efficient code.
               </p>
             </div>
 
@@ -203,14 +208,15 @@ export default function Home() {
             </div>
 
             <div className="flex items-center space-x-6 pt-4 animate-fade-in-up delay-400">
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-white rounded-full shadow-md flex items-center justify-center hover:shadow-lg transition-all duration-300 hover:scale-110 cursor-pointer group">
+              <a href="https://github.com/nikeshtamangghising" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-white rounded-full shadow-md flex items-center justify-center hover:shadow-lg transition-all duration-300 hover:scale-110 cursor-pointer group"
+                aria-label="GitHub profile of Nikesh Tamang"
+              >
                 <i className="ri-github-fill text-gray-600 group-hover:text-indigo-600 transition-colors"></i>
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-white rounded-full shadow-md flex items-center justify-center hover:shadow-lg transition-all duration-300 hover:scale-110 cursor-pointer group">
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-white rounded-full shadow-md flex items-center justify-center hover:shadow-lg transition-all duration-300 hover:scale-110 cursor-pointer group"
+                aria-label="LinkedIn profile of Nikesh Tamang"
+              >
                 <i className="ri-linkedin-fill text-gray-600 group-hover:text-indigo-600 transition-colors"></i>
-              </a>
-              <a href="https://stackoverflow.com" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-white rounded-full shadow-md flex items-center justify-center hover:shadow-lg transition-all duration-300 hover:scale-110 cursor-pointer group">
-                <i className="ri-stack-overflow-line text-gray-600 group-hover:text-indigo-600 transition-colors"></i>
               </a>
             </div>
           </div>
@@ -218,8 +224,8 @@ export default function Home() {
           <div className="relative animate-fade-in-right">
             <div className="relative z-10">
               <img 
-                src="https://readdy.ai/api/search-image?query=senior%20software%20engineer%20working%20at%20modern%20tech%20startup%20office%20with%20multiple%20monitors%20displaying%20code%2C%20wearing%20casual%20business%20attire%2C%20natural%20lighting%20through%20large%20windows%2C%20focused%20on%20complex%20system%20architecture%20design&width=600&height=700&seq=senior-dev&orientation=portrait"
-                alt="Senior Software Engineer"
+                src="/images/hero.jpg"
+                alt="Nikesh Tamang"
                 className="rounded-2xl shadow-2xl object-cover w-full h-96 md:h-[500px] hover:scale-105 transition-transform duration-500"
               />
             </div>
@@ -238,35 +244,44 @@ export default function Home() {
               <i className="ri-user-3-line mr-2"></i>
               About Nikesh
             </div>
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Engineering Excellence</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">My Journey</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Bridging the gap between innovative ideas and robust technical implementations
+              From learning to code to building real-world applications that make a difference
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div className="space-y-6">
+              <div className="mb-6">
+                <p className="text-gray-800 text-lg leading-relaxed">
+                  With over three years of dedicated experience in full-stack development, I am a passionate problem-solver adept at crafting robust and scalable web applications. My expertise spans Python, Django, and modern front-end frameworks like React, complemented by a strong foundation in AI technologies. I am committed to writing clean, maintainable code and translating complex ideas into intuitive user experiences.
+                </p>
+                <ul className="list-disc list-inside text-gray-700 mt-4">
+                  <li>Built and launched 25+ projects, including an e-commerce platform that reduced checkout times by 40%.</li>
+                </ul>
+              </div>
+
               <div className="prose prose-lg">
                 <p className="text-gray-600 leading-relaxed">
-                  With 8+ years in enterprise software development, I've architected systems that serve millions of users. 
-                  My journey started at a fintech startup where I learned to build fast, secure, and scalable solutions 
-                  under pressure.
+                  My coding journey began with curiosity and a desire to create. I started with Python and quickly fell in love 
+                  with Django's elegant framework. What started as simple scripts has evolved into full-stack web applications 
+                  that solve real problems.
                 </p>
                 <p className="text-gray-600 leading-relaxed">
-                  Currently leading a team of 12 engineers at TechFlow Solutions, where we've reduced system downtime by 95% 
-                  and improved deployment frequency from monthly to daily releases. I believe in code that not only works 
-                  but tells a story.
+                  I believe in writing code that's not just functional, but also readable and maintainable. Every project 
+                  is an opportunity to learn something new, whether it's mastering a new framework or exploring AI integration. 
+                  I'm passionate about creating user-friendly applications that make technology accessible to everyone.
                 </p>
               </div>
 
               <div className="grid grid-cols-2 gap-6">
                 <div className="bg-slate-50 p-6 rounded-xl text-center hover:shadow-lg transition-all duration-300">
-                  <div className="text-3xl font-bold text-indigo-600 mb-2">127+</div>
-                  <div className="text-gray-600">Projects Delivered</div>
+                  <div className="text-3xl font-bold text-indigo-600 mb-2">25+</div>
+                  <div className="text-gray-600">Projects Built</div>
                 </div>
                 <div className="bg-slate-50 p-6 rounded-xl text-center hover:shadow-lg transition-all duration-300">
-                  <div className="text-3xl font-bold text-indigo-600 mb-2">43</div>
-                  <div className="text-gray-600">Team Members Mentored</div>
+                  <div className="text-3xl font-bold text-indigo-600 mb-2">3+</div>
+                  <div className="text-gray-600">Years Coding</div>
                 </div>
               </div>
             </div>
@@ -277,25 +292,30 @@ export default function Home() {
                   <div className="w-3 h-3 bg-red-500 rounded-full mr-2"></div>
                   <div className="w-3 h-3 bg-yellow-500 rounded-full mr-2"></div>
                   <div className="w-3 h-3 bg-green-500 rounded-full mr-4"></div>
-                  <span className="text-gray-500 text-sm">senior-architect.ts</span>
+                  <span className="text-gray-500 text-sm">developer-profile.py</span>
                 </div>
 
                 <div className="font-mono text-sm space-y-2">
-                  <div className="text-purple-600">interface <span className="text-blue-600">TechLead</span> {`{`}</div>
+                  <div className="text-purple-600">class <span className="text-blue-600">Developer</span>:</div>
                   <div className="ml-4 space-y-1">
-                    <div><span className="text-red-600">name</span>: <span className="text-green-600">"Nikesh Tamang"</span>;</div>
-                    <div><span className="text-red-600">role</span>: <span className="text-green-600">"Senior Software Architect"</span>;</div>
-                    <div><span className="text-red-600">experience</span>: <span className="text-orange-600">8.5</span>;</div>
-                    <div><span className="text-red-600">specialties</span>: [</div>
                     <div className="ml-4 space-y-1">
-                      <div><span className="text-green-600">"Microservices"</span>,</div>
-                      <div><span className="text-green-600">"Cloud Architecture"</span>,</div>
-                      <div><span className="text-green-600">"Team Leadership"</span></div>
+                      <div><span className="text-red-600">def</span> <span className="text-blue-600">__init__</span>(<span className="text-green-600">self</span>):</div>
+                      <div className="ml-4 space-y-1">
+                        <div><span className="text-green-600">self</span>.<span className="text-red-600">name</span> = <span className="text-green-600">"Nikesh Tamang"</span></div>
+                        <div><span className="text-green-600">self</span>.<span className="text-red-600">role</span> = <span className="text-green-600">"Full Stack Developer"</span></div>
+                        <div><span className="text-green-600">self</span>.<span className="text-red-600">experience</span> = <span className="text-orange-600">3</span></div>
+                        <div><span className="text-green-600">self</span>.<span className="text-red-600">specialties</span> = [</div>
+                        <div className="ml-4 space-y-1">
+                          <div><span className="text-green-600">"Python"</span>,</div>
+                          <div><span className="text-green-600">"Django"</span>,</div>
+                          <div><span className="text-green-600">"React"</span>,</div>
+                          <div><span className="text-green-600">"AI/ML"</span></div>
+                        </div>
+                        <div>]</div>
+                        <div><span className="text-green-600">self</span>.<span className="text-red-600">philosophy</span> = <span className="text-green-600">"Code with passion"</span></div>
+                      </div>
                     </div>
-                    <div>];</div>
-                    <div><span className="text-red-600">philosophy</span>: <span className="text-green-600">"Code with purpose"</span>;</div>
                   </div>
-                  <div className="text-purple-600">{`}`}</div>
                 </div>
               </div>
             </div>
@@ -311,9 +331,9 @@ export default function Home() {
               <i className="ri-tools-line mr-2"></i>
               Technical Expertise
             </div>
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Core Competencies</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">What I Do Best</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Deep expertise across the full technology stack with focus on scalable architecture
+              A mix of frontend creativity and backend logic, with a passion for clean, efficient code
             </p>
           </div>
 
@@ -322,23 +342,24 @@ export default function Home() {
               <div className="w-16 h-16 bg-indigo-100 rounded-xl flex items-center justify-center mb-6">
                 <i className="ri-window-line text-2xl text-indigo-600"></i>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Frontend Architecture</h3>
-              <p className="text-gray-600 mb-6">Building performant, accessible user interfaces with modern frameworks and design systems.</p>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Frontend Development</h3>
+              <p className="text-gray-600 mb-6">Creating responsive, user-friendly interfaces that look great and work smoothly across all devices.</p>
+              <p className="italic text-gray-500 mb-4">Example: Built a dynamic product dashboard for an e-commerce site using React and Next.js, improving user engagement and SEO.</p>
               <div className="space-y-3">
                 <div className="flex justify-between items-center">
-                  <span className="text-sm text-gray-700">React Ecosystem</span>
-                  <div className="flex-1 mx-3 bg-gray-200 rounded-full h-2">
-                    <div className="bg-indigo-600 h-2 rounded-full w-11/12"></div>
-                  </div>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-sm text-gray-700">Vue.js & Nuxt</span>
+                  <span className="text-sm text-gray-700">React & Next.js</span>
                   <div className="flex-1 mx-3 bg-gray-200 rounded-full h-2">
                     <div className="bg-indigo-600 h-2 rounded-full w-10/12"></div>
                   </div>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-sm text-gray-700">Angular</span>
+                  <span className="text-sm text-gray-700">HTML/CSS/JavaScript</span>
+                  <div className="flex-1 mx-3 bg-gray-200 rounded-full h-2">
+                    <div className="bg-indigo-600 h-2 rounded-full w-11/12"></div>
+                  </div>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-sm text-gray-700">Tailwind CSS</span>
                   <div className="flex-1 mx-3 bg-gray-200 rounded-full h-2">
                     <div className="bg-indigo-600 h-2 rounded-full w-9/12"></div>
                   </div>
@@ -350,25 +371,26 @@ export default function Home() {
               <div className="w-16 h-16 bg-emerald-100 rounded-xl flex items-center justify-center mb-6">
                 <i className="ri-database-2-line text-2xl text-emerald-600"></i>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Backend Systems</h3>
-              <p className="text-gray-600 mb-6">Designing distributed systems and APIs that handle millions of requests with reliability.</p>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Backend Development</h3>
+              <p className="text-gray-600 mb-6">Building robust APIs and server-side logic that powers modern web applications with Python and Django.</p>
+              <p className="italic text-gray-500 mb-4">Example: Designed and implemented RESTful APIs with Django REST Framework, enabling secure data exchange and efficient order processing for a multi-vendor platform.</p>
               <div className="space-y-3">
                 <div className="flex justify-between items-center">
-                  <span className="text-sm text-gray-700">Go & Microservices</span>
+                  <span className="text-sm text-gray-700">Python & Django</span>
                   <div className="flex-1 mx-3 bg-gray-200 rounded-full h-2">
-                    <div className="bg-emerald-600 h-2 rounded-full w-11/12"></div>
+                  <div className="bg-emerald-600 h-2 rounded-full w-11/12"></div>
                   </div>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-sm text-gray-700">Python & Django</span>
+                  <span className="text-sm text-gray-700">REST APIs</span>
                   <div className="flex-1 mx-3 bg-gray-200 rounded-full h-2">
                     <div className="bg-emerald-600 h-2 rounded-full w-10/12"></div>
                   </div>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-sm text-gray-700">GraphQL & REST</span>
+                  <span className="text-sm text-gray-700">Database Design</span>
                   <div className="flex-1 mx-3 bg-gray-200 rounded-full h-2">
-                    <div className="bg-emerald-600 h-2 rounded-full w-11/12"></div>
+                    <div className="bg-emerald-600 h-2 rounded-full w-9/12"></div>
                   </div>
                 </div>
               </div>
@@ -378,23 +400,24 @@ export default function Home() {
               <div className="w-16 h-16 bg-amber-100 rounded-xl flex items-center justify-center mb-6">
                 <i className="ri-rocket-line text-2xl text-amber-600"></i>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">DevOps & Infrastructure</h3>
-              <p className="text-gray-600 mb-6">Automating deployments and maintaining high-availability systems on cloud platforms.</p>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Tools & Technologies</h3>
+              <p className="text-gray-600 mb-6">Using modern tools and platforms to build, deploy, and maintain web applications efficiently.</p>
+              <p className="italic text-gray-500 mb-4">Example: Integrated OpenAI APIs for a customer support chatbot, and deployed full-stack apps to Vercel for seamless CI/CD and global performance.</p>
               <div className="space-y-3">
                 <div className="flex justify-between items-center">
-                  <span className="text-sm text-gray-700">Kubernetes & Docker</span>
-                  <div className="flex-1 mx-3 bg-gray-200 rounded-full h-2">
-                    <div className="bg-amber-600 h-2 rounded-full w-10/12"></div>
-                  </div>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-sm text-gray-700">AWS & GCP</span>
+                  <span className="text-sm text-gray-700">Git & GitHub</span>
                   <div className="flex-1 mx-3 bg-gray-200 rounded-full h-2">
                     <div className="bg-amber-600 h-2 rounded-full w-11/12"></div>
                   </div>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-sm text-gray-700">Terraform & GitOps</span>
+                  <span className="text-sm text-gray-700">Vercel & Netlify</span>
+                  <div className="flex-1 mx-3 bg-gray-200 rounded-full h-2">
+                    <div className="bg-amber-600 h-2 rounded-full w-10/12"></div>
+                  </div>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-sm text-gray-700">AI Integration</span>
                   <div className="flex-1 mx-3 bg-gray-200 rounded-full h-2">
                     <div className="bg-amber-600 h-2 rounded-full w-9/12"></div>
                   </div>
@@ -413,18 +436,18 @@ export default function Home() {
               <i className="ri-briefcase-line mr-2"></i>
               Featured Work
             </div>
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Recent Projects</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">My Projects</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Selected projects showcasing technical depth and business impact
+              A collection of web applications and tools I've built to solve real problems
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden hover:scale-105">
+            <div className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden hover:scale-105 animate-fade-in-up" style={{ animationDelay: '0.1s', animationFillMode: 'both' }}>
               <div className="relative overflow-hidden">
                 <img 
-                  src="https://readdy.ai/api/search-image?query=fintech%20trading%20platform%20dashboard%20with%20real-time%20market%20data%2C%20financial%20charts%20and%20graphs%2C%20modern%20dark%20theme%20interface%20showing%20cryptocurrency%20and%20stock%20trading%20analytics%2C%20professional%20financial%20software%20design&width=400&height=250&seq=fintech-platform&orientation=landscape"
-                  alt="FinTech Trading Platform"
+                  src="/images/projects/ecommerce-platform.jpg"
+                  alt="Screenshot of E-Commerce Platform project homepage"
                   className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -434,30 +457,32 @@ export default function Home() {
                   <div className="w-3 h-3 bg-emerald-500 rounded-full mr-2"></div>
                   <span className="text-sm text-emerald-600 font-medium">Production</span>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">FinTech Trading Platform</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">E-Commerce Platform</h3>
                 <p className="text-gray-600 mb-4 text-sm leading-relaxed">
-                  Real-time trading platform processing 2M+ transactions daily. Built microservices architecture 
-                  with sub-100ms latency and 99.99% uptime guarantee.
+                  A full-featured online store with user authentication, product management, 
+                  shopping cart, and payment integration. Built with Django and React.
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="px-3 py-1 bg-blue-100 text-blue-700 text-xs rounded-full">Go</span>
-                  <span className="px-3 py-1 bg-emerald-100 text-emerald-700 text-xs rounded-full">Kafka</span>
-                  <span className="px-3 py-1 bg-purple-100 text-purple-700 text-xs rounded-full">Redis</span>
+                  <span className="px-3 py-1 bg-blue-100 text-blue-700 text-xs rounded-full">Django</span>
+                  <span className="px-3 py-1 bg-emerald-100 text-emerald-700 text-xs rounded-full">React</span>
+                  <span className="px-3 py-1 bg-purple-100 text-purple-700 text-xs rounded-full">PostgreSQL</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-500">$2.4B traded volume</span>
-                  <button className="w-8 h-8 bg-indigo-100 rounded-full flex items-center justify-center hover:bg-indigo-200 transition-colors cursor-pointer">
-                    <i className="ri-external-link-line text-indigo-600"></i>
-                  </button>
+                  <span className="text-sm text-gray-500">Full-stack web app</span>
+                  <div className="flex gap-2">
+                    <a href="https://ecommerce-platform.com" target="_blank" rel="noopener noreferrer" className="text-indigo-600 underline text-xs">Live Demo</a>
+                    <a href="https://github.com/nikeshtamangghising/ecommerce-platform" target="_blank" rel="noopener noreferrer" className="text-gray-700 underline text-xs">GitHub</a>
+                  </div>
                 </div>
+                <p className="text-xs text-gray-500 mt-2"><strong>My Role:</strong> Full Stack Developer, Lead Frontend Architect</p>
               </div>
             </div>
 
-            <div className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden hover:scale-105">
+            <div className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden hover:scale-105 animate-fade-in-up" style={{ animationDelay: '0.2s', animationFillMode: 'both' }}>
               <div className="relative overflow-hidden">
                 <img 
-                  src="https://readdy.ai/api/search-image?query=healthcare%20management%20system%20interface%20showing%20patient%20records%2C%20medical%20data%20visualization%2C%20appointment%20scheduling%2C%20clean%20medical%20software%20design%20with%20charts%20and%20patient%20information%20dashboard&width=400&height=250&seq=healthcare-system&orientation=landscape"
-                  alt="Healthcare Management System"
+                  src="/images/projects/task-manager.jpg"
+                  alt="Screenshot of Task Management App dashboard"
                   className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -467,30 +492,32 @@ export default function Home() {
                   <div className="w-3 h-3 bg-blue-500 rounded-full mr-2"></div>
                   <span className="text-sm text-blue-600 font-medium">Enterprise</span>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Healthcare Management Suite</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Task Management App</h3>
                 <p className="text-gray-600 mb-4 text-sm leading-relaxed">
-                  HIPAA-compliant platform serving 150+ hospitals. Reduced patient wait times by 45% 
-                  through intelligent scheduling and resource optimization algorithms.
+                  A collaborative task management tool with real-time updates, user roles, 
+                  and progress tracking. Features drag-and-drop interface and team collaboration.
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="px-3 py-1 bg-cyan-100 text-cyan-700 text-xs rounded-full">React</span>
-                  <span className="px-3 py-1 bg-green-100 text-green-700 text-xs rounded-full">Node.js</span>
-                  <span className="px-3 py-1 bg-red-100 text-red-700 text-xs rounded-full">PostgreSQL</span>
+                  <span className="px-3 py-1 bg-cyan-100 text-cyan-700 text-xs rounded-full">Python</span>
+                  <span className="px-3 py-1 bg-green-100 text-green-700 text-xs rounded-full">Django</span>
+                  <span className="px-3 py-1 bg-red-100 text-red-700 text-xs rounded-full">JavaScript</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-500">2.3M patients served</span>
-                  <button className="w-8 h-8 bg-indigo-100 rounded-full flex items-center justify-center hover:bg-indigo-200 transition-colors cursor-pointer">
-                    <i className="ri-external-link-line text-indigo-600"></i>
-                  </button>
+                  <span className="text-sm text-gray-500">Team collaboration tool</span>
+                  <div className="flex gap-2">
+                    <a href="https://task-management-app.com" target="_blank" rel="noopener noreferrer" className="text-indigo-600 underline text-xs">Live Demo</a>
+                    <a href="https://github.com/nikeshtamangghising/task-management-app" target="_blank" rel="noopener noreferrer" className="text-gray-700 underline text-xs">GitHub</a>
+                  </div>
                 </div>
+                <p className="text-xs text-gray-500 mt-2"><strong>My Role:</strong> Backend Developer, API Architect</p>
               </div>
             </div>
 
-            <div className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden hover:scale-105">
+            <div className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden hover:scale-105 animate-fade-in-up" style={{ animationDelay: '0.3s', animationFillMode: 'both' }}>
               <div className="relative overflow-hidden">
                 <img 
-                  src="https://readdy.ai/api/search-image?query=AI%20machine%20learning%20analytics%20platform%20showing%20data%20science%20workflow%2C%20neural%20network%20visualization%2C%20model%20training%20interface%2C%20modern%20data%20science%20dashboard%20with%20charts%20and%20AI%20metrics&width=400&height=250&seq=ai-platform&orientation=landscape"
-                  alt="AI Analytics Platform"
+                  src="/images/projects/ai-chat-assistant.jpg"
+                  alt="Screenshot of AI Chat Assistant conversation interface"
                   className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -500,30 +527,100 @@ export default function Home() {
                   <div className="w-3 h-3 bg-amber-500 rounded-full mr-2"></div>
                   <span className="text-sm text-amber-600 font-medium">AI/ML</span>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">AI Analytics Engine</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">AI Chat Assistant</h3>
                 <p className="text-gray-600 mb-4 text-sm leading-relaxed">
-                  Machine learning platform that processes 50TB+ daily data for predictive analytics. 
-                  Achieved 94% accuracy in fraud detection for enterprise clients.
+                  An intelligent chatbot integrated with OpenAI API for customer support. 
+                  Features conversation history, sentiment analysis, and automated responses.
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   <span className="px-3 py-1 bg-orange-100 text-orange-700 text-xs rounded-full">Python</span>
-                  <span className="px-3 py-1 bg-indigo-100 text-indigo-700 text-xs rounded-full">TensorFlow</span>
-                  <span className="px-3 py-1 bg-teal-100 text-teal-700 text-xs rounded-full">Spark</span>
+                  <span className="px-3 py-1 bg-indigo-100 text-indigo-700 text-xs rounded-full">OpenAI API</span>
+                  <span className="px-3 py-1 bg-teal-100 text-teal-700 text-xs rounded-full">Next.js</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-500">94% accuracy rate</span>
-                  <button className="w-8 h-8 bg-indigo-100 rounded-full flex items-center justify-center hover:bg-indigo-200 transition-colors cursor-pointer">
-                    <i className="ri-external-link-line text-indigo-600"></i>
-                  </button>
+                  <span className="text-sm text-gray-500">AI-powered chatbot</span>
+                  <div className="flex gap-2">
+                    <a href="https://ai-chat-assistant.com" target="_blank" rel="noopener noreferrer" className="text-indigo-600 underline text-xs">Live Demo</a>
+                    <a href="https://github.com/nikeshtamangghising/ai-chat-assistant" target="_blank" rel="noopener noreferrer" className="text-gray-700 underline text-xs">GitHub</a>
+                  </div>
                 </div>
+                <p className="text-xs text-gray-500 mt-2"><strong>My Role:</strong> AI Engineer, Chatbot Architect</p>
               </div>
             </div>
           </div>
 
           <div className="text-center mt-12">
-            <button className="bg-indigo-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl whitespace-nowrap cursor-pointer">
-              Explore All Projects
-            </button>
+            <Link href="/projects">
+              <button className="bg-indigo-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl whitespace-nowrap cursor-pointer">
+                View More Projects
+              </button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section id="testimonials" className="py-20 bg-slate-50">
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-emerald-100 text-emerald-700 text-sm font-medium mb-4">
+              <i className="ri-chat-quote-line mr-2"></i>
+              Testimonials
+            </div>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">What People Say</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">Feedback from clients and collaborators</p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-white rounded-2xl shadow-lg p-8 flex flex-col animate-fade-in-up" style={{ animationDelay: '0.1s', animationFillMode: 'both' }}>
+              <p className="text-gray-700 text-lg mb-4">“Nikesh is a highly skilled developer who delivered our project on time and exceeded our expectations. His attention to detail and problem-solving skills are top-notch.”</p>
+              <div className="flex items-center mt-auto">
+                <div className="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center mr-3">
+                  <i className="ri-user-3-line text-indigo-600"></i>
+                </div>
+                <div>
+                  <div className="font-semibold text-gray-900">A. Sharma</div>
+                  <div className="text-gray-500 text-xs">Product Manager, TechFlow</div>
+                </div>
+              </div>
+            </div>
+            <div className="bg-white rounded-2xl shadow-lg p-8 flex flex-col animate-fade-in-up" style={{ animationDelay: '0.2s', animationFillMode: 'both' }}>
+              <p className="text-gray-700 text-lg mb-4">“Working with Nikesh was a fantastic experience. He communicates clearly, writes clean code, and always finds creative solutions to tough problems.”</p>
+              <div className="flex items-center mt-auto">
+                <div className="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center mr-3">
+                  <i className="ri-user-3-line text-indigo-600"></i>
+                </div>
+                <div>
+                  <div className="font-semibold text-gray-900">S. Lama</div>
+                  <div className="text-gray-500 text-xs">Team Lead, Everest Solutions</div>
+                </div>
+              </div>
+            </div>
+            {/* New Feedback Card 1 */}
+            <div className="bg-white rounded-2xl shadow-lg p-8 flex flex-col animate-fade-in-up" style={{ animationDelay: '0.3s', animationFillMode: 'both' }}>
+              <p className="text-gray-700 text-lg mb-4">“Nikesh’s expertise in Django and React helped us launch our MVP in record time. He’s proactive, reliable, and a true team player.”</p>
+              <div className="flex items-center mt-auto">
+                <div className="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center mr-3">
+                  <i className="ri-user-3-line text-indigo-600"></i>
+                </div>
+                <div>
+                  <div className="font-semibold text-gray-900">M. Gurung</div>
+                  <div className="text-gray-500 text-xs">CTO, StartupHub</div>
+                </div>
+              </div>
+            </div>
+            {/* New Feedback Card 2 */}
+            <div className="bg-white rounded-2xl shadow-lg p-8 flex flex-col animate-fade-in-up" style={{ animationDelay: '0.4s', animationFillMode: 'both' }}>
+              <p className="text-gray-700 text-lg mb-4">“I was impressed by Nikesh’s ability to break down complex problems and deliver elegant solutions. He’s a pleasure to work with and always goes the extra mile.”</p>
+              <div className="flex items-center mt-auto">
+                <div className="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center mr-3">
+                  <i className="ri-user-3-line text-indigo-600"></i>
+                </div>
+                <div>
+                  <div className="font-semibold text-gray-900">R. Karki</div>
+                  <div className="text-gray-500 text-xs">Project Lead, CodeCrafters</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -538,8 +635,21 @@ export default function Home() {
             </div>
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Ready to Collaborate?</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Looking for technical leadership or system architecture expertise? Let's discuss how we can build something exceptional together.
+              Looking for technical leadership or system architecture expertise? Let's discuss how we can build something exceptional together.<br />
+              <span className="block mt-2 font-semibold text-indigo-700">Currently available for remote full-time positions and freelance projects.</span>
             </p>
+            <div className="flex justify-center gap-4 mt-6">
+              <a href="https://github.com/nikeshtamangghising" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-indigo-100 transition-all duration-300 hover:scale-110 cursor-pointer group"
+                aria-label="GitHub profile of Nikesh Tamang"
+              >
+                <i className="ri-github-fill text-gray-600 group-hover:text-indigo-600 transition-colors"></i>
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-indigo-100 transition-all duration-300 hover:scale-110 cursor-pointer group"
+                aria-label="LinkedIn profile of Nikesh Tamang"
+              >
+                <i className="ri-linkedin-fill text-gray-600 group-hover:text-indigo-600 transition-colors"></i>
+              </a>
+            </div>
           </div>
 
           <div className="grid md:grid-cols-2 gap-12">
@@ -557,7 +667,7 @@ export default function Home() {
                       <i className="ri-mail-line text-indigo-600"></i>
                     </div>
                     <div>
-                      <div className="font-semibold text-gray-900">nikesh.tamang@techflow.dev</div>
+                      <div className="font-semibold text-gray-900">nikeshtamangghising@gmail.com</div>
                       <div className="text-gray-600 text-sm">Response within 4 hours</div>
                     </div>
                   </div>
@@ -567,8 +677,8 @@ export default function Home() {
                       <i className="ri-phone-line text-emerald-600"></i>
                     </div>
                     <div>
-                      <div className="font-semibold text-gray-900">+1 (415) 892-3647</div>
-                      <div className="text-gray-600 text-sm">Available Mon-Fri, 8am-7pm PST</div>
+                      <div className="font-semibold text-gray-900">+977 9869078280</div>
+                      <div className="text-gray-600 text-sm">Available Mon-Fri, flexible hours</div>
                     </div>
                   </div>
 
@@ -577,8 +687,8 @@ export default function Home() {
                       <i className="ri-map-pin-line text-amber-600"></i>
                     </div>
                     <div>
-                      <div className="font-semibold text-gray-900">San Francisco Bay Area</div>
-                      <div className="text-gray-600 text-sm">Open to remote and hybrid opportunities</div>
+                      <div className="font-semibold text-gray-900">Naldum, Mandandeupur -2, Kavreplanchok, Nepal</div>
+                      <div className="text-gray-600 text-sm">Open to remote opportunities worldwide</div>
                     </div>
                   </div>
                 </div>
@@ -637,11 +747,12 @@ export default function Home() {
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-200 pr-8 appearance-none bg-white"
                     >
                       <option value="">Select collaboration type</option>
+                      <option value="fullstack">Full-Stack Development</option>
+                      <option value="ai">AI Integration</option>
                       <option value="architecture">System Architecture</option>
                       <option value="leadership">Technical Leadership</option>
-                      <option value="fullstack">Full-Stack Development</option>
-                      <option value="consulting">Strategic Consulting</option>
-                      <option value="mentorship">Team Mentorship</option>
+                      <option value="consulting">Consulting</option>
+                      <option value="mentorship">Mentorship</option>
                     </select>
                     <div className="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
                       <i className="ri-arrow-down-s-line text-gray-400"></i>
@@ -667,6 +778,9 @@ export default function Home() {
                 {submitStatus && (
                   <div className={`p-4 rounded-lg text-sm ${submitStatus.includes('Thanks') ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
                     {submitStatus}
+                    {submitStatus.includes('Thanks') && (
+                      <div className="mt-2 text-gray-700">I typically respond to inquiries within 24-48 hours. I look forward to connecting!</div>
+                    )}
                   </div>
                 )}
 
@@ -702,16 +816,15 @@ export default function Home() {
             </div>
 
             <div className="flex space-x-4">
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center hover:bg-indigo-100 transition-all duration-300 hover:scale-110 cursor-pointer group">
+              <a href="https://github.com/nikeshtamangghising" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center hover:bg-indigo-100 transition-all duration-300 hover:scale-110 cursor-pointer group">
                 <i className="ri-github-fill text-gray-600 group-hover:text-indigo-600 transition-colors"></i>
               </a>
               <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center hover:bg-indigo-100 transition-all duration-300 hover:scale-110 cursor-pointer group">
                 <i className="ri-linkedin-fill text-gray-600 group-hover:text-indigo-600 transition-colors"></i>
               </a>
-              <a href="https://stackoverflow.com" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center hover:bg-indigo-100 transition-all duration-300 hover:scale-110 cursor-pointer group">
-                <i className="ri-stack-overflow-line text-gray-600 group-hover:text-indigo-600 transition-colors"></i>
-              </a>
-              <a href="mailto:nikesh.tamang@techflow.dev" className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center hover:bg-indigo-100 transition-all duration-300 hover:scale-110 cursor-pointer group">
+              <a href="mailto:nikeshtamangghising@gmail.com" className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center hover:bg-indigo-100 transition-all duration-300 hover:scale-110 cursor-pointer group"
+                aria-label="Email Nikesh Tamang"
+              >
                 <i className="ri-mail-line text-gray-600 group-hover:text-indigo-600 transition-colors"></i>
               </a>
             </div>

@@ -21,8 +21,31 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Nikesh Tamang | Portfolio",
-  description: "Portfolio of Nikesh Tamang - Web Developer",
+  title: "Nikesh Tamang | Full Stack Developer, AI Engineer, Python & Django Specialist",
+  description: "Portfolio of Nikesh Tamang – Full Stack Developer, AI Engineer, and Python/Django Specialist. Explore projects, technical expertise, and testimonials.",
+  openGraph: {
+    title: "Nikesh Tamang | Full Stack Developer, AI Engineer, Python & Django Specialist",
+    description: "Portfolio of Nikesh Tamang – Full Stack Developer, AI Engineer, and Python/Django Specialist. Explore projects, technical expertise, and testimonials.",
+    url: "https://nikeshtamangghising.github.io/portfolio", // Update to your actual domain if different
+    siteName: "Nikesh Tamang Portfolio",
+    images: [
+      {
+        url: "/images/og-image.jpg", // Place a suitable image in public/images/
+        width: 1200,
+        height: 630,
+        alt: "Nikesh Tamang Portfolio Screenshot"
+      }
+    ],
+    locale: "en_US",
+    type: "website"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Nikesh Tamang | Full Stack Developer, AI Engineer, Python & Django Specialist",
+    description: "Portfolio of Nikesh Tamang – Full Stack Developer, AI Engineer, and Python/Django Specialist. Explore projects, technical expertise, and testimonials.",
+    images: ["/images/og-image.jpg"]
+  },
+  metadataBase: new URL("https://nikeshtamangghising.github.io/portfolio") // Update to your actual domain if different
 };
 
 export default function RootLayout({
