@@ -4,55 +4,135 @@ import { Navbar } from '@/components/Navbar';
 
 export default function Blog() {
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-900">
+    <div className="min-h-screen bg-[#fcfaf2] text-gray-950">
       <Navbar />
-      <main className="pt-28 pb-20 max-w-4xl mx-auto px-6">
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-indigo-100 text-indigo-700 text-sm font-medium mb-4">
-            <i className="ri-article-line mr-2"></i>
-            Blog
+      
+      <main className="pt-32 pb-24 max-w-7xl mx-auto px-8 md:px-12">
+        {/* Header Section */}
+        <div className="mb-20 space-y-6">
+          <div className="inline-flex items-center px-4 py-1 rounded-sm bg-red-700 text-white text-[10px] font-black tracking-[0.3em] uppercase transform -skew-x-12">
+            The Journal
           </div>
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Insights & Articles</h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">Sharing knowledge, tutorials, and thoughts on web development, AI, and more.</p>
+          <h1 className="text-5xl md:text-8xl font-black tracking-tighter">
+            Insights & <br />
+            <span className="text-red-700">Digital Logic</span>
+          </h1>
+          <p className="text-lg md:text-xl text-gray-600 max-w-2xl font-medium border-l-4 border-red-700/20 pl-6">
+            Exploring the intersection of architectural precision, AI integration, and the art of clean code.
+          </p>
         </div>
-        <div className="grid md:grid-cols-2 gap-8">
-          {blogPosts.map((post, idx) => (
-            <div key={post.slug} className="bg-white rounded-2xl shadow-lg p-8 flex flex-col animate-fade-in-up" style={{ animationDelay: `${0.1 + idx * 0.1}s`, animationFillMode: 'both' }}>
-              <h2 className="text-2xl font-bold mb-2">{post.title}</h2>
-              <div className="text-sm text-gray-500 mb-4">{post.date}</div>
-              <p className="text-gray-700 mb-4">{post.excerpt}</p>
-              <Link href={`/blog/${post.slug}`} className="text-indigo-600 font-semibold hover:underline mt-auto">Read More</Link>
-            </div>
+
+        {/* Featured Post */}
+        {blogPosts.length > 0 && (
+          <div className="mb-24 group relative">
+            <Link href={`/blog/${blogPosts[0].slug}`} className="block">
+              <div className="grid lg:grid-cols-2 bg-white border-4 border-gray-950 shadow-[20px_20px_0px_0px_rgba(185,28,28,1)] overflow-hidden transition-all hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none">
+                <div className="relative h-80 lg:h-auto overflow-hidden">
+                  <img 
+                    src={blogPosts[0].image} 
+                    alt={blogPosts[0].title}
+                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100"
+                  />
+                  <div className="absolute inset-0 bg-red-700/10 mix-blend-multiply opacity-40"></div>
+                </div>
+                <div className="p-10 md:p-16 flex flex-col justify-center space-y-6">
+                  <div className="text-[10px] font-black uppercase tracking-[0.4em] text-red-700">Featured Article // {blogPosts[0].date}</div>
+                  <h2 className="text-3xl md:text-5xl font-black leading-tight group-hover:text-red-700 transition-colors">{blogPosts[0].title}</h2>
+                  <p className="text-gray-600 text-lg font-medium leading-relaxed">{blogPosts[0].excerpt}</p>
+                  <div className="pt-4 inline-flex items-center text-sm font-black uppercase tracking-[0.2em] border-b-2 border-black group-hover:border-red-700 transition-colors w-fit">
+                    Read Full Details <i className="ri-arrow-right-line ml-3"></i>
+                  </div>
+                </div>
+              </div>
+            </Link>
+          </div>
+        )}
+
+        {/* Blog Grid */}
+        <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
+          {blogPosts.slice(1).map((post, idx) => (
+            <Link key={post.slug} href={`/blog/${post.slug}`} className="group block">
+              <div className="bg-white border-4 border-gray-950 p-8 shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex flex-col h-full animate-fade-in-up" style={{ animationDelay: `${0.1 * idx}s`, animationFillMode: 'both' }}>
+                <div className="relative h-64 mb-8 overflow-hidden border-2 border-gray-950">
+                  <img 
+                    src={post.image} 
+                    alt={post.title}
+                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                  />
+                  <div className="absolute inset-0 bg-red-700/5 mix-blend-multiply opacity-30"></div>
+                </div>
+                <div className="text-[10px] font-black uppercase tracking-[0.3em] text-red-700 mb-4">{post.date}</div>
+                <h3 className="text-2xl lg:text-3xl font-black mb-4 tracking-tighter leading-tight group-hover:text-red-700 transition-colors">{post.title}</h3>
+                <p className="text-gray-600 font-medium mb-8 flex-grow">{post.excerpt}</p>
+                <div className="inline-flex items-center text-xs font-black uppercase tracking-[0.2em] text-gray-950 group-hover:text-red-700 transition-colors">
+                  Continue Reading <i className="ri-arrow-right-s-line ml-2"></i>
+                </div>
+              </div>
+            </Link>
           ))}
         </div>
       </main>
-      <footer className="bg-white border-t border-gray-200 py-12 mt-12">
-        <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
-          <div className="mb-4 md:mb-0">
-            <div className="text-2xl font-bold text-gray-900 mb-2 cursor-pointer">
-              <Link href="/">Nikesh<span className="text-indigo-600">T</span></Link>
+
+      {/* Reused Footer from home redesign */}
+      <footer className="bg-gray-950 text-white py-20">
+        <div className="max-w-7xl mx-auto px-8 md:px-12">
+          <div className="flex flex-col md:flex-row items-start justify-between gap-12">
+            <div className="max-w-sm space-y-6">
+              <div className="text-3xl font-black tracking-tighter">
+                NIKESH<span className="text-red-700">T</span>
+              </div>
+              <p className="text-stone-400 font-medium leading-relaxed italic">
+                "Where precision logic meets artistic digital vision. Built with passion and purpose."
+              </p>
             </div>
-            <p className="text-gray-600">Engineering solutions that scale with your ambitions</p>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-12">
+              <div className="space-y-4">
+                <div className="text-[10px] font-black uppercase tracking-[0.3em] text-red-700">Navigation</div>
+                <div className="flex flex-col space-y-2 text-stone-400 font-bold uppercase text-xs tracking-widest">
+                  <Link href="/" className="hover:text-white transition-colors text-left">Home</Link>
+                  <Link href="/#about" className="hover:text-white transition-colors text-left">About</Link>
+                  <Link href="/projects" className="hover:text-white transition-colors text-left">Work</Link>
+                  <Link href="/blog" className="hover:text-white transition-colors text-left">Blog</Link>
+                </div>
+              </div>
+              
+              <div className="space-y-4">
+                <div className="text-[10px] font-black uppercase tracking-[0.3em] text-red-700">Connect</div>
+                <div className="flex flex-col space-y-2 text-stone-400 font-bold uppercase text-xs tracking-widest">
+                  <a href="https://github.com/nikeshtamangghising" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">GitHub</a>
+                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LinkedIn</a>
+                  <a href="mailto:nikeshtamangghising@gmail.com" className="hover:text-white transition-colors">Email</a>
+                </div>
+              </div>
+
+              <div className="space-y-4 col-span-2 sm:col-span-1">
+                <div className="text-[10px] font-black uppercase tracking-[0.3em] text-red-700">Support</div>
+                <a 
+                  href="https://buymeacoffee.com/nikeshtamag" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-white text-black px-6 py-3 rounded-sm font-black text-[10px] tracking-widest hover:bg-red-700 hover:text-white transition-all shadow-[6px_6px_0px_0px_rgba(185,28,28,1)]"
+                >
+                  <i className="ri-cup-line"></i> BUY COFFEE
+                </a>
+              </div>
+            </div>
           </div>
-          <div className="flex space-x-4">
-            <a href="https://github.com/nikeshtamangghising" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center hover:bg-indigo-100 transition-all duration-300 hover:scale-110 cursor-pointer group" aria-label="GitHub profile of Nikesh Tamang">
-              <i className="ri-github-fill text-gray-600 group-hover:text-indigo-600 transition-colors"></i>
-            </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center hover:bg-indigo-100 transition-all duration-300 hover:scale-110 cursor-pointer group" aria-label="LinkedIn profile of Nikesh Tamang">
-              <i className="ri-linkedin-fill text-gray-600 group-hover:text-indigo-600 transition-colors"></i>
-            </a>
-            <a href="mailto:nikeshtamangghising@gmail.com" className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center hover:bg-indigo-100 transition-all duration-300 hover:scale-110 cursor-pointer group" aria-label="Email Nikesh Tamang">
-              <i className="ri-mail-line text-gray-600 group-hover:text-indigo-600 transition-colors"></i>
-            </a>
-            <a href="https://buymeacoffee.com/nikeshtamag" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center hover:bg-yellow-100 transition-all duration-300 hover:scale-110 cursor-pointer group" aria-label="Buy Nikesh a Coffee">
-              <i className="ri-cup-line text-gray-600 group-hover:text-yellow-600 transition-colors"></i>
-            </a>
+
+          <div className="mt-20 pt-10 border-t border-stone-900 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div className="text-[10px] font-black uppercase tracking-[0.5em] text-stone-600">
+              &copy; MMXXIV // NIKESH TAMANG
+            </div>
+            <div className="flex gap-4">
+              <div className="w-2 h-2 bg-red-700 rounded-full animate-pulse"></div>
+              <div className="text-[10px] font-black uppercase tracking-[0.5em] text-stone-600">
+                Crafted in Kathmandu
+              </div>
+            </div>
           </div>
-        </div>
-        <div className="border-t border-gray-200 mt-8 pt-8 text-center">
-          <p className="text-gray-500">&copy; 2024 Nikesh Tamang. Built with purpose and precision.</p>
         </div>
       </footer>
     </div>
   );
-} 
+}
