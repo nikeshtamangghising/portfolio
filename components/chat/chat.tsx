@@ -200,15 +200,15 @@ export function Chat({ onError, onClose }: ChatProps & { onClose?: () => void })
     
     // Optimistically add user message
     setMessages(prev => {
-      // Ensure we don't have any messages with empty or duplicate IDs
-      const cleanedPrev = prev.filter(msg => 
-        msg?.id && 
-        typeof msg.id === 'string' && 
-        msg.id.trim() !== '' && 
-        msg.id !== newId
+      // Avoid duplicate messages with same content within short time
+      const isDuplicate = prev.some(msg => 
+        msg.role === 'user' && 
+        msg.content === content && 
+        Date.now() - msg.timestamp < 1000
       );
-      
-      const updated = [...cleanedPrev, userMessage];
+      if (isDuplicate) return prev;
+
+      const updated = [...prev, userMessage];
       saveMessages(updated);
       return updated;
     });
