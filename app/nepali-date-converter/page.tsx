@@ -100,52 +100,133 @@ export default function ToolsPage() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
-          {/* Age Calculator Section */}
+        <div className="flex flex-col gap-16 lg:gap-24">
+          {/* Date Converter Section */}
           <div className="space-y-8 animate-fade-in-up">
-            <div className="bg-white border-4 border-gray-950 p-6 md:p-10 shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]">
-              <div className="flex items-center justify-between mb-10">
-                <h2 className="text-2xl font-black uppercase tracking-tighter">Age Calculator</h2>
-                <div className="flex bg-stone-100 p-1 rounded-sm border-2 border-black">
+            <div className="bg-white border-4 border-gray-950 p-6 md:p-12 shadow-[15px_15px_0px_0px_rgba(0,0,0,1)] max-w-4xl mx-auto w-full">
+              <div className="flex flex-col md:flex-row md:items-center justify-between mb-10 gap-6">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-red-700 flex items-center justify-center text-white text-2xl transform rotate-6">
+                    <i className="ri-arrow-left-right-line"></i>
+                  </div>
+                  <h2 className="text-3xl font-black uppercase tracking-tighter">Date Converter</h2>
+                </div>
+                <div className="flex items-center gap-4 bg-stone-100 p-1.5 rounded-sm border-2 border-black w-fit">
+                  <span className={cn("text-[10px] font-black uppercase px-2", convInputType === 'AD' ? "text-red-700" : "text-gray-400")}>English (AD)</span>
+                  <button 
+                    onClick={() => setConvInputType(p => p === 'AD' ? 'BS' : 'AD')}
+                    className="w-14 h-7 bg-gray-950 rounded-full relative p-1 transition-colors"
+                  >
+                    <div className={cn("w-5 h-5 bg-white rounded-full transition-all duration-300 shadow-md", convInputType === 'BS' ? "translate-x-7" : "translate-x-0")}></div>
+                  </button>
+                  <span className={cn("text-[10px] font-black uppercase px-2", convInputType === 'BS' ? "text-red-700" : "text-gray-400")}>Nepali (BS)</span>
+                </div>
+              </div>
+
+              <div className="space-y-10">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-black uppercase text-gray-400 tracking-widest">Year</label>
+                    <select 
+                      value={convDate.year}
+                      onChange={(e) => setConvDate({...convDate, year: parseInt(e.target.value)})}
+                      className="w-full p-4 bg-stone-50 border-2 border-black font-bold appearance-none cursor-pointer focus:bg-white transition-colors"
+                    >
+                      {(convInputType === 'AD' ? yearsAD : yearsBS).map(y => <option key={y} value={y}>{y}</option>)}
+                    </select>
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-black uppercase text-gray-400 tracking-widest">Month</label>
+                    <select 
+                      value={convDate.month}
+                      onChange={(e) => setConvDate({...convDate, month: parseInt(e.target.value)})}
+                      className="w-full p-4 bg-stone-50 border-2 border-black font-bold appearance-none cursor-pointer focus:bg-white transition-colors"
+                    >
+                      {(convInputType === 'AD' ? monthsAD : monthsBS).map((m, i) => <option key={m} value={i+1}>{m}</option>)}
+                    </select>
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-black uppercase text-gray-400 tracking-widest">Day</label>
+                    <select 
+                      value={convDate.day}
+                      onChange={(e) => setConvDate({...convDate, day: parseInt(e.target.value)})}
+                      className="w-full p-4 bg-stone-50 border-2 border-black font-bold appearance-none cursor-pointer focus:bg-white transition-colors"
+                    >
+                      {days.map(d => <option key={d} value={d}>{d}</option>)}
+                    </select>
+                  </div>
+                </div>
+
+                <button 
+                  onClick={handleConvert}
+                  className="w-full bg-red-700 text-white py-6 font-black uppercase tracking-[0.4em] shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all hover:bg-gray-950"
+                >
+                  Convert Date
+                </button>
+
+                {conversionResult && (
+                  <div className="pt-12 border-t-4 border-red-700 flex flex-col items-center text-center animate-fade-in">
+                    <div className="text-[10px] font-black uppercase text-gray-400 mb-3 tracking-[0.2em]">Target {convInputType === 'AD' ? 'Nepali (BS)' : 'English (AD)'} Date</div>
+                    <div className="text-5xl md:text-7xl font-black text-gray-950 tracking-tighter mb-4">{conversionResult.main}</div>
+                    <div className="text-sm md:text-base font-black text-red-700 uppercase tracking-widest bg-red-50 px-6 py-2 rounded-sm border-2 border-red-700/10">
+                      {conversionResult.details}
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+
+          {/* Age Calculator Section */}
+          <div className="space-y-8 animate-fade-in-up delay-200">
+            <div className="bg-white border-4 border-gray-950 p-6 md:p-12 shadow-[15px_15px_0px_0px_rgba(185,28,28,1)] max-w-4xl mx-auto w-full">
+              <div className="flex flex-col md:flex-row md:items-center justify-between mb-10 gap-6">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-gray-950 flex items-center justify-center text-white text-2xl transform -rotate-6">
+                    <i className="ri-calendar-event-line"></i>
+                  </div>
+                  <h2 className="text-3xl font-black uppercase tracking-tighter">Age Calculator</h2>
+                </div>
+                <div className="flex bg-stone-100 p-1.5 rounded-sm border-2 border-black w-fit">
                   <button 
                     onClick={() => setAgeInputType('AD')}
-                    className={cn("px-4 py-1 text-[10px] font-black transition-all", ageInputType === 'AD' ? "bg-red-700 text-white" : "text-gray-500")}
+                    className={cn("px-5 py-1.5 text-[10px] font-black transition-all uppercase tracking-widest", ageInputType === 'AD' ? "bg-red-700 text-white shadow-md" : "text-gray-500")}
                   >AD</button>
                   <button 
                     onClick={() => setAgeInputType('BS')}
-                    className={cn("px-4 py-1 text-[10px] font-black transition-all", ageInputType === 'BS' ? "bg-red-700 text-white" : "text-gray-500")}
+                    className={cn("px-5 py-1.5 text-[10px] font-black transition-all uppercase tracking-widest", ageInputType === 'BS' ? "bg-red-700 text-white shadow-md" : "text-gray-500")}
                   >BS</button>
                 </div>
               </div>
 
-              <div className="space-y-8">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="space-y-10">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   <div className="space-y-2">
-                    <label className="text-[10px] font-black uppercase text-gray-400">Year</label>
+                    <label className="text-[10px] font-black uppercase text-gray-400 tracking-widest">Birth Year</label>
                     <select 
                       value={ageDate.year}
                       onChange={(e) => setAgeDate({...ageDate, year: parseInt(e.target.value)})}
-                      className="w-full p-3 bg-stone-50 border-2 border-black font-bold appearance-none cursor-pointer"
+                      className="w-full p-4 bg-stone-50 border-2 border-black font-bold appearance-none cursor-pointer focus:bg-white transition-colors"
                     >
                       {(ageInputType === 'AD' ? yearsAD : yearsBS).map(y => <option key={y} value={y}>{y}</option>)}
                     </select>
                   </div>
                   <div className="space-y-2">
-                    <label className="text-[10px] font-black uppercase text-gray-400">Month</label>
+                    <label className="text-[10px] font-black uppercase text-gray-400 tracking-widest">Birth Month</label>
                     <select 
                       value={ageDate.month}
                       onChange={(e) => setAgeDate({...ageDate, month: parseInt(e.target.value)})}
-                      className="w-full p-3 bg-stone-50 border-2 border-black font-bold appearance-none cursor-pointer"
+                      className="w-full p-4 bg-stone-50 border-2 border-black font-bold appearance-none cursor-pointer focus:bg-white transition-colors"
                     >
                       {(ageInputType === 'AD' ? monthsAD : monthsBS).map((m, i) => <option key={m} value={i+1}>{m}</option>)}
                     </select>
                   </div>
                   <div className="space-y-2">
-                    <label className="text-[10px] font-black uppercase text-gray-400">Day</label>
+                    <label className="text-[10px] font-black uppercase text-gray-400 tracking-widest">Birth Day</label>
                     <select 
                       value={ageDate.day}
                       onChange={(e) => setAgeDate({...ageDate, day: parseInt(e.target.value)})}
-                      className="w-full p-3 bg-stone-50 border-2 border-black font-bold appearance-none cursor-pointer"
+                      className="w-full p-4 bg-stone-50 border-2 border-black font-bold appearance-none cursor-pointer focus:bg-white transition-colors"
                     >
                       {days.map(d => <option key={d} value={d}>{d}</option>)}
                     </select>
@@ -154,81 +235,25 @@ export default function ToolsPage() {
 
                 <button 
                   onClick={handleCalculateAge}
-                  className="w-full bg-red-700 text-white py-5 font-black uppercase tracking-[0.3em] shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] active:translate-x-1 active:translate-y-1 active:shadow-none"
-                >Calculate</button>
+                  className="w-full bg-gray-950 text-white py-6 font-black uppercase tracking-[0.4em] shadow-[10px_10px_0px_0px_rgba(185,28,28,1)] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all hover:bg-red-700"
+                >
+                  Calculate Age
+                </button>
 
                 {age && (
-                  <div className="pt-10 grid grid-cols-3 gap-4 border-t-2 border-stone-100">
-                    <div className="text-center">
-                      <div className="text-4xl font-black text-red-700">{age.years}</div>
-                      <div className="text-[9px] font-black uppercase tracking-widest text-gray-400">Years</div>
+                  <div className="pt-12 grid grid-cols-3 gap-6 border-t-4 border-stone-100 animate-fade-in">
+                    <div className="text-center bg-stone-50 p-6 border-2 border-black/5 rounded-sm">
+                      <div className="text-5xl md:text-6xl font-black text-red-700 tracking-tighter">{age.years}</div>
+                      <div className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-400 mt-2">Years</div>
                     </div>
-                    <div className="text-center">
-                      <div className="text-4xl font-black text-red-700">{age.months}</div>
-                      <div className="text-[9px] font-black uppercase tracking-widest text-gray-400">Months</div>
+                    <div className="text-center bg-stone-50 p-6 border-2 border-black/5 rounded-sm">
+                      <div className="text-5xl md:text-6xl font-black text-red-700 tracking-tighter">{age.months}</div>
+                      <div className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-400 mt-2">Months</div>
                     </div>
-                    <div className="text-center">
-                      <div className="text-4xl font-black text-red-700">{age.days}</div>
-                      <div className="text-[9px] font-black uppercase tracking-widest text-gray-400">Days</div>
+                    <div className="text-center bg-stone-50 p-6 border-2 border-black/5 rounded-sm">
+                      <div className="text-5xl md:text-6xl font-black text-red-700 tracking-tighter">{age.days}</div>
+                      <div className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-400 mt-2">Days</div>
                     </div>
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
-
-          {/* Date Converter Section */}
-          <div className="space-y-8 animate-fade-in-up delay-100">
-            <div className="bg-white border-4 border-gray-950 p-6 md:p-10 shadow-[12px_12px_0px_0px_rgba(185,28,28,1)]">
-              <div className="flex items-center justify-between mb-10">
-                <h2 className="text-2xl font-black uppercase tracking-tighter">Converter</h2>
-                <div className="flex items-center gap-3">
-                  <span className={cn("text-[10px] font-black uppercase", convInputType === 'AD' ? "text-red-700" : "text-gray-400")}>AD</span>
-                  <button 
-                    onClick={() => setConvInputType(p => p === 'AD' ? 'BS' : 'AD')}
-                    className="w-12 h-6 bg-gray-950 rounded-full relative p-1"
-                  >
-                    <div className={cn("w-4 h-4 bg-white rounded-full transition-all duration-300", convInputType === 'BS' ? "ml-6" : "ml-0")}></div>
-                  </button>
-                  <span className={cn("text-[10px] font-black uppercase", convInputType === 'BS' ? "text-red-700" : "text-gray-400")}>BS</span>
-                </div>
-              </div>
-
-              <div className="space-y-8">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <select 
-                    value={convDate.year}
-                    onChange={(e) => setConvDate({...convDate, year: parseInt(e.target.value)})}
-                    className="w-full p-3 bg-stone-50 border-2 border-black font-bold appearance-none"
-                  >
-                    {(convInputType === 'AD' ? yearsAD : yearsBS).map(y => <option key={y} value={y}>{y}</option>)}
-                  </select>
-                  <select 
-                    value={convDate.month}
-                    onChange={(e) => setConvDate({...convDate, month: parseInt(e.target.value)})}
-                    className="w-full p-3 bg-stone-50 border-2 border-black font-bold appearance-none"
-                  >
-                    {(convInputType === 'AD' ? monthsAD : monthsBS).map((m, i) => <option key={m} value={i+1}>{m}</option>)}
-                  </select>
-                  <select 
-                    value={convDate.day}
-                    onChange={(e) => setConvDate({...convDate, day: parseInt(e.target.value)})}
-                    className="w-full p-3 bg-stone-50 border-2 border-black font-bold appearance-none"
-                  >
-                    {days.map(d => <option key={d} value={d}>{d}</option>)}
-                  </select>
-                </div>
-
-                <button 
-                  onClick={handleConvert}
-                  className="w-full bg-gray-950 text-white py-5 font-black uppercase tracking-[0.3em] shadow-[8px_8px_0px_0px_rgba(185,28,28,1)] active:translate-x-1 active:translate-y-1 active:shadow-none"
-                >Convert</button>
-
-                {conversionResult && (
-                  <div className="pt-10 border-t-4 border-red-700 flex flex-col items-center text-center">
-                    <div className="text-[10px] font-black uppercase text-gray-400 mb-2">Target Date ({convInputType === 'AD' ? 'BS' : 'AD'})</div>
-                    <div className="text-4xl md:text-5xl font-black text-gray-950 tracking-tighter mb-2">{conversionResult.main}</div>
-                    <div className="text-sm font-black text-red-700 uppercase tracking-widest">{conversionResult.details}</div>
                   </div>
                 )}
               </div>
