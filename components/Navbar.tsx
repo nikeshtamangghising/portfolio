@@ -42,7 +42,7 @@ export function Navbar() {
     { label: 'Expertise', id: 'skills' },
     { label: 'Portfolio', id: 'projects' },
     { label: 'Blog', href: '/blog' },
-    { label: 'Tools', href: '/tools' },
+    { label: 'Converter', href: '/nepali-date-converter' },
     { label: 'Contact', id: 'contact' },
   ];
 

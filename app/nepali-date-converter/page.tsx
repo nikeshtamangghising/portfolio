@@ -234,6 +234,51 @@ export default function ToolsPage() {
             </div>
           </div>
         </div>
+
+        {/* SEO Content Section */}
+        <div className="mt-24 border-t-4 border-gray-950 pt-16 space-y-12 animate-fade-in">
+          <section className="space-y-6">
+            <h2 className="text-3xl font-black uppercase tracking-tighter">About Nepali Date Converter</h2>
+            <p className="text-gray-600 font-medium leading-relaxed max-w-4xl">
+              Our <strong>Nepali Date Converter</strong> is a precision tool designed to bridge the gap between the <strong>Gregorian Calendar (AD)</strong> and the <strong>Bikram Sambat (BS)</strong>. 
+              Bikram Sambat is the official calendar of Nepal, which is approximately 56 years and 8 months ahead of the AD calendar. 
+              This tool uses advanced algorithms to ensure 100% accuracy for historical and future dates, making it essential for official documentation, birthdays, and cultural planning.
+            </p>
+          </section>
+
+          <div className="grid md:grid-cols-2 gap-12">
+            <div className="space-y-6">
+              <h3 className="text-xl font-black uppercase tracking-widest text-red-700">How to convert AD to BS?</h3>
+              <p className="text-gray-600 font-medium text-sm leading-relaxed">
+                Simply select the English year, month, and day from the dropdowns in the converter section. 
+                Click "Convert" and the system will instantly generate the corresponding Nepali date in Bikram Sambat format, 
+                including the day of the week.
+              </p>
+            </div>
+            <div className="space-y-6">
+              <h3 className="text-xl font-black uppercase tracking-widest text-red-700">Accurate Age Calculation</h3>
+              <p className="text-gray-600 font-medium text-sm leading-relaxed">
+                Most calculators only work with English dates. Our <strong>Age Calculator</strong> is unique because it allows you to 
+                input your birth date in either AD or BS. It handles the leap years and varying month lengths of the Nepali calendar 
+                to give you your exact age down to the day.
+              </p>
+            </div>
+          </div>
+
+          <section className="bg-gray-950 text-white p-10 rounded-sm">
+            <h3 className="text-xl font-black uppercase tracking-[0.2em] mb-6">Frequently Asked Questions</h3>
+            <div className="space-y-8">
+              <div>
+                <h4 className="text-red-500 font-black uppercase text-xs mb-2">What is the difference between AD and BS?</h4>
+                <p className="text-stone-400 text-sm">AD (Anno Domini) follows the Gregorian calendar used globally, while BS (Bikram Sambat) is the lunar-solar Hindu calendar used in Nepal.</p>
+              </div>
+              <div>
+                <h4 className="text-red-500 font-black uppercase text-xs mb-2">Is this converter accurate for 2081 and beyond?</h4>
+                <p className="text-stone-400 text-sm">Yes, our tool is updated with the latest Nepali Patro data to support future years including 2081, 2082, and beyond.</p>
+              </div>
+            </div>
+          </section>
+        </div>
       </main>
 
       {/* Reused Footer Consistent with Home */}
