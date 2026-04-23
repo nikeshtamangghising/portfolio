@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { Navbar } from '@/components/Navbar';
+import { cn } from '@/lib/utils';
 
 export default function Home() {
   const [currentText, setCurrentText] = useState('');
@@ -210,89 +211,125 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About Section */}
-      <section id="about" className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-indigo-100 text-indigo-700 text-sm font-medium mb-4">
-              <i className="ri-user-3-line mr-2"></i>
-              About Nikesh
-            </div>
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">My Journey</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              From learning to code to building real-world applications that make a difference
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div className="space-y-6">
-              <div className="mb-6">
-                <p className="text-gray-800 text-lg leading-relaxed">
-                  With over three years of dedicated experience in full-stack development, I am a passionate problem-solver adept at crafting robust and scalable web applications. My expertise spans Python, Django, and modern front-end frameworks like React, complemented by a strong foundation in AI technologies. I am committed to writing clean, maintainable code and translating complex ideas into intuitive user experiences.
-                </p>
-                <ul className="list-disc list-inside text-gray-700 mt-4">
-                  <li>Built and launched 25+ projects, including an e-commerce platform that reduced checkout times by 40%.</li>
-                </ul>
-              </div>
-
-              <div className="prose prose-lg">
-                <p className="text-gray-600 leading-relaxed">
-                  My coding journey began with curiosity and a desire to create. I started with Python and quickly fell in love 
-                  with Django's elegant framework. What started as simple scripts has evolved into full-stack web applications 
-                  that solve real problems.
-                </p>
-                <p className="text-gray-600 leading-relaxed">
-                  I believe in writing code that's not just functional, but also readable and maintainable. Every project 
-                  is an opportunity to learn something new, whether it's mastering a new framework or exploring AI integration. 
-                  I'm passionate about creating user-friendly applications that make technology accessible to everyone.
-                </p>
-              </div>
-
-              <div className="grid grid-cols-2 gap-6">
-                <div className="bg-slate-50 p-6 rounded-xl text-center hover:shadow-lg transition-all duration-300">
-                  <div className="text-3xl font-bold text-indigo-600 mb-2">25+</div>
-                  <div className="text-gray-600">Projects Built</div>
+      {/* About Section - Japanese Ink Style */}
+      <section id="about" className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-8 md:px-12">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8 animate-fade-in-up">
+              <div className="space-y-4">
+                <div className="inline-flex items-center px-4 py-1 rounded-sm bg-stone-100 text-stone-600 text-[10px] font-black tracking-[0.3em] uppercase transform -skew-x-12">
+                  The Architect
                 </div>
-                <div className="bg-slate-50 p-6 rounded-xl text-center hover:shadow-lg transition-all duration-300">
-                  <div className="text-3xl font-bold text-indigo-600 mb-2">3+</div>
-                  <div className="text-gray-600">Years Coding</div>
+                <h2 className="text-4xl md:text-6xl font-black text-gray-950 tracking-tighter">
+                  Crafting Digital <br />
+                  <span className="text-red-700 underline decoration-4 underline-offset-8 decoration-red-700/20">Structures</span>
+                </h2>
+                <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-xl font-medium">
+                  With over 3 years of deep engineering experience, I specialize in building complex, 
+                  high-performance systems that balance technical precision with artistic design.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-2 gap-8">
+                <div className="bg-[#fcfaf2] p-8 border-4 border-gray-950 shadow-[8px_8px_0px_0px_rgba(185,28,28,1)] transition-all hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none">
+                  <div className="text-4xl font-black text-gray-950 mb-2">25+</div>
+                  <div className="text-xs font-black uppercase tracking-widest text-red-700">Deployments</div>
+                </div>
+                <div className="bg-[#fcfaf2] p-8 border-4 border-gray-950 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none">
+                  <div className="text-4xl font-black text-gray-950 mb-2">3+</div>
+                  <div className="text-xs font-black uppercase tracking-widest text-red-700">Years XP</div>
                 </div>
               </div>
             </div>
 
-            <div className="relative">
-              <div className="bg-slate-50 p-8 rounded-2xl shadow-lg">
-                <div className="flex items-center mb-6">
-                  <div className="w-3 h-3 bg-red-500 rounded-full mr-2"></div>
-                  <div className="w-3 h-3 bg-yellow-500 rounded-full mr-2"></div>
-                  <div className="w-3 h-3 bg-green-500 rounded-full mr-4"></div>
-                  <span className="text-gray-500 text-sm">developer-profile.py</span>
+            <div className="relative animate-fade-in-right">
+              <div className="bg-gray-950 p-8 rounded-sm shadow-[20px_20px_0px_0px_rgba(185,28,28,0.2)]">
+                <div className="flex items-center mb-6 border-b border-gray-800 pb-4">
+                  <div className="flex gap-2">
+                    <div className="w-3 h-3 bg-red-600 rounded-full"></div>
+                    <div className="w-3 h-3 bg-stone-700 rounded-full"></div>
+                    <div className="w-3 h-3 bg-stone-800 rounded-full"></div>
+                  </div>
+                  <span className="ml-6 font-mono text-[10px] text-stone-500 uppercase tracking-widest">architect.py</span>
                 </div>
 
-                <div className="font-mono text-sm space-y-2">
-                  <div className="text-purple-600">class <span className="text-blue-600">Developer</span>:</div>
-                  <div className="ml-4 space-y-1">
+                <div className="font-mono text-sm space-y-3">
+                  <div className="text-red-500">class <span className="text-white">Developer</span>:</div>
+                  <div className="ml-4 space-y-1 text-stone-400">
+                    <div>def __init__(self):</div>
                     <div className="ml-4 space-y-1">
-                      <div><span className="text-red-600">def</span> <span className="text-blue-600">__init__</span>(<span className="text-green-600">self</span>):</div>
-                      <div className="ml-4 space-y-1">
-                        <div><span className="text-green-600">self</span>.<span className="text-red-600">name</span> = <span className="text-green-600">"Nikesh Tamang"</span></div>
-                        <div><span className="text-green-600">self</span>.<span className="text-red-600">role</span> = <span className="text-green-600">"Full Stack Developer"</span></div>
-                        <div><span className="text-green-600">self</span>.<span className="text-red-600">experience</span> = <span className="text-orange-600">3</span></div>
-                        <div><span className="text-green-600">self</span>.<span className="text-red-600">specialties</span> = [</div>
-                        <div className="ml-4 space-y-1">
-                          <div><span className="text-green-600">"Python"</span>,</div>
-                          <div><span className="text-green-600">"Django"</span>,</div>
-                          <div><span className="text-green-600">"React"</span>,</div>
-                          <div><span className="text-green-600">"AI/ML"</span></div>
-                        </div>
-                        <div>]</div>
-                        <div><span className="text-green-600">self</span>.<span className="text-red-600">philosophy</span> = <span className="text-green-600">"Code with passion"</span></div>
-                      </div>
+                      <div>self.name = <span className="text-red-400">"Nikesh Tamang"</span></div>
+                      <div>self.focus = <span className="text-red-400">"AI & Architecture"</span></div>
+                      <div>self.stack = [<span className="text-white">"Python"</span>, <span className="text-white">"Django"</span>, <span className="text-white">"React"</span>]</div>
+                      <div>self.approach = <span className="text-red-400">"Artistic Engineering"</span></div>
                     </div>
                   </div>
                 </div>
               </div>
+              {/* Decorative ink splash element */}
+              <div className="absolute -top-10 -right-10 w-40 h-40 bg-red-700/5 rounded-full blur-3xl pointer-events-none"></div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Skills Section - Japanese Ink Style */}
+      <section id="skills" className="py-24 bg-[#fcfaf2]">
+        <div className="max-w-7xl mx-auto px-8 md:px-12">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
+            <div className="space-y-4">
+              <div className="inline-flex items-center px-4 py-1 rounded-sm bg-red-700 text-white text-[10px] font-black tracking-[0.3em] uppercase transform -skew-x-12">
+                Expertise
+              </div>
+              <h2 className="text-4xl md:text-6xl font-black text-gray-950 tracking-tighter">
+                Technical <span className="text-red-700">Mastery</span>
+              </h2>
+            </div>
+            <p className="text-lg text-gray-600 max-w-md font-medium border-l-2 border-red-700/30 pl-6 italic">
+              "Precision in logic, fluid in design. The perfect balance of form and function."
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-12">
+            {[
+              {
+                title: "Frontend",
+                icon: "ri-window-line",
+                desc: "Responsive interfaces using React/Next.js with a focus on cinematic UX and performance.",
+                color: "bg-red-700",
+                skills: ["React & Next.js", "Tailwind CSS", "Framer Motion"]
+              },
+              {
+                title: "Backend",
+                icon: "ri-database-2-line",
+                desc: "Scalable server architectures and RESTful APIs built with Python and Django framework.",
+                color: "bg-gray-950",
+                skills: ["Python & Django", "PostgreSQL", "System Design"]
+              },
+              {
+                title: "AI & Tools",
+                icon: "ri-rocket-line",
+                desc: "Leveraging cutting-edge AI integration and modern DevOps for rapid development cycles.",
+                color: "bg-red-700",
+                skills: ["AI Integration", "Git & CI/CD", "Cloud Architecture"]
+              }
+            ].map((skill, idx) => (
+              <div key={idx} className="group relative bg-white border-4 border-gray-950 p-10 shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                <div className={cn("w-16 h-16 rounded-sm flex items-center justify-center mb-8 transform -rotate-6 group-hover:rotate-0 transition-transform", skill.color)}>
+                  <i className={cn("text-3xl text-white", skill.icon)}></i>
+                </div>
+                <h3 className="text-2xl font-black text-gray-950 mb-4 uppercase tracking-tighter">{skill.title}</h3>
+                <p className="text-gray-600 mb-8 font-medium leading-relaxed">{skill.desc}</p>
+                <div className="space-y-4">
+                  {skill.skills.map((s, i) => (
+                    <div key={i} className="flex items-center gap-3">
+                      <div className="w-1.5 h-1.5 bg-red-700 rounded-full"></div>
+                      <span className="text-xs font-black uppercase tracking-widest text-gray-950">{s}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -402,132 +439,84 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Projects Section */}
-      <section id="projects" className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-indigo-100 text-indigo-700 text-sm font-medium mb-4">
-              <i className="ri-briefcase-line mr-2"></i>
-              Featured Work
+      {/* Projects Section - Japanese Ink Style */}
+      <section id="projects" className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-8 md:px-12">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8 text-left">
+            <div className="space-y-4">
+              <div className="inline-flex items-center px-4 py-1 rounded-sm bg-stone-100 text-stone-600 text-[10px] font-black tracking-[0.3em] uppercase transform -skew-x-12">
+                Selected Works
+              </div>
+              <h2 className="text-4xl md:text-6xl font-black text-gray-950 tracking-tighter">
+                Project <span className="text-red-700">Portfolio</span>
+              </h2>
             </div>
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">My Projects</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              A collection of web applications and tools I've built to solve real problems
+            <p className="text-lg text-gray-600 max-w-md font-medium">
+              A collection of high-performance systems and creative digital solutions.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden hover:scale-105 animate-fade-in-up" style={{ animationDelay: '0.1s', animationFillMode: 'both' }}>
-              <div className="relative overflow-hidden">
-                <img 
-                  src="/images/projects/ecommerce-platform.jpg"
-                  alt="Screenshot of E-Commerce Platform project homepage"
-                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </div>
-              <div className="p-6">
-                <div className="flex items-center mb-3">
-                  <div className="w-3 h-3 bg-emerald-500 rounded-full mr-2"></div>
-                  <span className="text-sm text-emerald-600 font-medium">Production</span>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+            {[
+              {
+                title: "E-Commerce Platform",
+                image: "/images/projects/ecommerce-platform.jpg",
+                desc: "A full-featured online store with user authentication, product management, and payment integration.",
+                tags: ["Django", "React", "PostgreSQL"],
+                link: "https://ecommerce-platform.com"
+              },
+              {
+                title: "Task Management App",
+                image: "/images/projects/task-management.jpg",
+                desc: "Real-time task tracking system with collaboration features and automated workflow triggers.",
+                tags: ["Next.js", "Redis", "WebSockets"],
+                link: "https://task-management.com"
+              },
+              {
+                title: "AI Chat Assistant",
+                image: "/images/projects/ai-chat-assistant.jpg",
+                desc: "Intelligent chatbot integrated with OpenAI's GPT models for context-aware customer support.",
+                tags: ["Python", "OpenAI", "React"],
+                link: "https://ai-assistant.com"
+              }
+            ].map((project, idx) => (
+              <div key={idx} className="group relative bg-[#fcfaf2] border-4 border-gray-950 overflow-hidden shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] animate-fade-in-up" style={{ animationDelay: `${0.1 * idx}s`, animationFillMode: 'both' }}>
+                <div className="relative h-56 overflow-hidden border-b-4 border-gray-950">
+                  <img 
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100"
+                  />
+                  <div className="absolute inset-0 bg-red-700/10 mix-blend-multiply opacity-60 group-hover:opacity-0 transition-opacity"></div>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">E-Commerce Platform</h3>
-                <p className="text-gray-600 mb-4 text-sm leading-relaxed">
-                  A full-featured online store with user authentication, product management, 
-                  shopping cart, and payment integration. Built with Django and React.
-                </p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="px-3 py-1 bg-blue-100 text-blue-700 text-xs rounded-full">Django</span>
-                  <span className="px-3 py-1 bg-emerald-100 text-emerald-700 text-xs rounded-full">React</span>
-                  <span className="px-3 py-1 bg-purple-100 text-purple-700 text-xs rounded-full">PostgreSQL</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-500">Full-stack web app</span>
-                  <div className="flex gap-2">
-                    <a href="https://ecommerce-platform.com" target="_blank" rel="noopener noreferrer" className="text-indigo-600 underline text-xs">Live Demo</a>
-                    <a href="https://github.com/nikeshtamangghising/ecommerce-platform" target="_blank" rel="noopener noreferrer" className="text-gray-700 underline text-xs">GitHub</a>
+                <div className="p-8">
+                  <h3 className="text-2xl font-black text-gray-950 mb-3 uppercase tracking-tighter">{project.title}</h3>
+                  <p className="text-gray-600 mb-6 text-sm font-medium leading-relaxed">{project.desc}</p>
+                  <div className="flex flex-wrap gap-2 mb-8">
+                    {project.tags.map((tag) => (
+                      <span key={tag} className="px-3 py-1 bg-white border-2 border-gray-950 text-gray-950 text-[10px] font-black uppercase tracking-widest">{tag}</span>
+                    ))}
                   </div>
+                  <a 
+                    href={project.link} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="inline-flex items-center text-xs font-black uppercase tracking-[0.2em] text-red-700 hover:text-black transition-colors group/btn"
+                  >
+                    View Project 
+                    <i className="ri-arrow-right-up-line ml-2 transform group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform"></i>
+                  </a>
                 </div>
-                <p className="text-xs text-gray-500 mt-2"><strong>My Role:</strong> Full Stack Developer, Lead Frontend Architect</p>
               </div>
-            </div>
-
-            <div className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden hover:scale-105 animate-fade-in-up" style={{ animationDelay: '0.2s', animationFillMode: 'both' }}>
-              <div className="relative overflow-hidden">
-                <img 
-                  src="/images/projects/task-management.jpg"
-                  alt="Screenshot of Task Management App dashboard"
-                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </div>
-              <div className="p-6">
-                <div className="flex items-center mb-3">
-                  <div className="w-3 h-3 bg-blue-500 rounded-full mr-2"></div>
-                  <span className="text-sm text-blue-600 font-medium">Enterprise</span>
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Task Management App</h3>
-                <p className="text-gray-600 mb-4 text-sm leading-relaxed">
-                  A collaborative task management tool with real-time updates, user roles, 
-                  and progress tracking. Features drag-and-drop interface and team collaboration.
-                </p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="px-3 py-1 bg-cyan-100 text-cyan-700 text-xs rounded-full">Python</span>
-                  <span className="px-3 py-1 bg-green-100 text-green-700 text-xs rounded-full">Django</span>
-                  <span className="px-3 py-1 bg-red-100 text-red-700 text-xs rounded-full">JavaScript</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-500">Team collaboration tool</span>
-                  <div className="flex gap-2">
-                    <a href="https://task-management-app.com" target="_blank" rel="noopener noreferrer" className="text-indigo-600 underline text-xs">Live Demo</a>
-                    <a href="https://github.com/nikeshtamangghising/task-management-app" target="_blank" rel="noopener noreferrer" className="text-gray-700 underline text-xs">GitHub</a>
-                  </div>
-                </div>
-                <p className="text-xs text-gray-500 mt-2"><strong>My Role:</strong> Backend Developer, API Architect</p>
-              </div>
-            </div>
-
-            <div className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden hover:scale-105 animate-fade-in-up" style={{ animationDelay: '0.3s', animationFillMode: 'both' }}>
-              <div className="relative overflow-hidden">
-                <img 
-                  src="/images/projects/ai-chat-assistant.jpg"
-                  alt="Screenshot of AI Chat Assistant conversation interface"
-                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </div>
-              <div className="p-6">
-                <div className="flex items-center mb-3">
-                  <div className="w-3 h-3 bg-amber-500 rounded-full mr-2"></div>
-                  <span className="text-sm text-amber-600 font-medium">AI/ML</span>
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">AI Chat Assistant</h3>
-                <p className="text-gray-600 mb-4 text-sm leading-relaxed">
-                  An intelligent chatbot integrated with OpenAI API for customer support. 
-                  Features conversation history, sentiment analysis, and automated responses.
-                </p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="px-3 py-1 bg-orange-100 text-orange-700 text-xs rounded-full">Python</span>
-                  <span className="px-3 py-1 bg-indigo-100 text-indigo-700 text-xs rounded-full">OpenAI API</span>
-                  <span className="px-3 py-1 bg-teal-100 text-teal-700 text-xs rounded-full">Next.js</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-500">AI-powered chatbot</span>
-                  <div className="flex gap-2">
-                    <a href="https://ai-chat-assistant.com" target="_blank" rel="noopener noreferrer" className="text-indigo-600 underline text-xs">Live Demo</a>
-                    <a href="https://github.com/nikeshtamangghising/ai-chat-assistant" target="_blank" rel="noopener noreferrer" className="text-gray-700 underline text-xs">GitHub</a>
-                  </div>
-                </div>
-                <p className="text-xs text-gray-500 mt-2"><strong>My Role:</strong> AI Engineer, Chatbot Architect</p>
-              </div>
-            </div>
+            ))}
           </div>
-
-          <div className="text-center mt-12">
-            <Link href="/projects">
-              <button className="bg-indigo-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl whitespace-nowrap cursor-pointer">
-                View More Projects
-              </button>
+          
+          <div className="mt-20 text-center">
+            <Link 
+              href="/projects" 
+              className="inline-block px-12 py-5 bg-gray-950 text-white rounded-sm font-black text-sm uppercase tracking-[0.3em] shadow-[8px_8px_0px_0px_rgba(185,28,28,1)] hover:shadow-none hover:translate-x-[8px] hover:translate-y-[8px] transition-all"
+            >
+              See All Projects
             </Link>
           </div>
         </div>
@@ -599,170 +588,111 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-20 bg-slate-50">
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-indigo-100 text-indigo-700 text-sm font-medium mb-4">
-              <i className="ri-chat-3-line mr-2"></i>
-              Let's Connect
-            </div>
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Ready to Collaborate?</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Looking for technical leadership or system architecture expertise? Let's discuss how we can build something exceptional together.<br />
-              <span className="block mt-2 font-semibold text-indigo-700">Currently available for remote full-time positions and freelance projects.</span>
-            </p>
-            <div className="flex justify-center gap-4 mt-6">
-              <a href="https://github.com/nikeshtamangghising" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-indigo-100 transition-all duration-300 hover:scale-110 cursor-pointer group"
-                aria-label="GitHub profile of Nikesh Tamang"
-              >
-                <i className="ri-github-fill text-gray-600 group-hover:text-indigo-600 transition-colors"></i>
-              </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-indigo-100 transition-all duration-300 hover:scale-110 cursor-pointer group"
-                aria-label="LinkedIn profile of Nikesh Tamang"
-              >
-                <i className="ri-linkedin-fill text-gray-600 group-hover:text-indigo-600 transition-colors"></i>
-              </a>
-            </div>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-12">
-            <div className="space-y-8">
-              <div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Let's build the future</h3>
-                <p className="text-gray-600 leading-relaxed mb-6">
-                  Whether you need to scale your current system, architect a new platform, or lead a technical transformation, 
-                  I bring proven experience in delivering complex solutions that drive business growth.
+      {/* Contact Section - Japanese Ink Style */}
+      <section id="contact" className="py-24 bg-[#fcfaf2]">
+        <div className="max-w-7xl mx-auto px-8 md:px-12">
+          <div className="grid lg:grid-cols-2 gap-20">
+            <div className="space-y-10">
+              <div className="space-y-6">
+                <div className="inline-flex items-center px-4 py-1 rounded-sm bg-red-700 text-white text-[10px] font-black tracking-[0.3em] uppercase transform -skew-x-12">
+                  Get In Touch
+                </div>
+                <h2 className="text-4xl md:text-7xl font-black text-gray-950 tracking-tighter">
+                  Let's Build <br />
+                  <span className="text-red-700">Together</span>
+                </h2>
+                <p className="text-lg text-gray-600 max-w-md font-medium leading-relaxed">
+                  Have a vision for a complex system or an AI-driven product? 
+                  Let's combine our expertise to create something extraordinary.
                 </p>
+              </div>
 
-                <div className="space-y-4">
-                  <div className="flex items-center space-x-4 hover:bg-white p-4 rounded-lg transition-colors cursor-pointer">
-                    <div className="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center">
-                      <i className="ri-mail-line text-indigo-600"></i>
-                    </div>
-                    <div>
-                      <div className="font-semibold text-gray-900">nikeshtamangghising@gmail.com</div>
-                      <div className="text-gray-600 text-sm">Response within 4 hours</div>
-                    </div>
+              <div className="space-y-6">
+                <div className="flex items-center space-x-6 group cursor-pointer p-4 border-2 border-transparent hover:border-black hover:bg-white transition-all shadow-none hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                  <div className="w-12 h-12 bg-gray-950 rounded-sm flex items-center justify-center group-hover:bg-red-700 transition-colors">
+                    <i className="ri-mail-line text-white text-xl"></i>
                   </div>
+                  <div>
+                    <div className="text-[10px] font-black uppercase tracking-widest text-red-700">Direct Email</div>
+                    <div className="font-black text-gray-950">nikeshtamangghising@gmail.com</div>
+                  </div>
+                </div>
 
-
-
-                  <div className="flex items-center space-x-4 hover:bg-white p-4 rounded-lg transition-colors cursor-pointer">
-                    <div className="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center">
-                      <i className="ri-map-pin-line text-amber-600"></i>
-                    </div>
-                    <div>
-                      <div className="font-semibold text-gray-900">Naldum, Mandandeupur -2, Kavreplanchok, Nepal</div>
-                      <div className="text-gray-600 text-sm">Open to remote opportunities worldwide</div>
-                    </div>
+                <div className="flex items-center space-x-6 group cursor-pointer p-4 border-2 border-transparent hover:border-black hover:bg-white transition-all shadow-none hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                  <div className="w-12 h-12 bg-gray-950 rounded-sm flex items-center justify-center group-hover:bg-red-700 transition-colors">
+                    <i className="ri-map-pin-line text-white text-xl"></i>
+                  </div>
+                  <div>
+                    <div className="text-[10px] font-black uppercase tracking-widest text-red-700">Current Base</div>
+                    <div className="font-black text-gray-950">Kathmandu, Nepal (Remote Worldwide)</div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="bg-white p-8 rounded-2xl shadow-lg">
-              <form id="contact-form" className="space-y-6" onSubmit={handleSubmit}>
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">First Name</label>
+            <div className="bg-white border-4 border-gray-950 p-10 shadow-[20px_20px_0px_0px_rgba(0,0,0,1)]">
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-black uppercase tracking-widest text-gray-400">First Name</label>
                     <input 
-                      type="text" 
+                      type="text"
                       name="first_name"
                       value={formData.first_name}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-200"
-                      placeholder="Sarah"
+                      className="w-full px-4 py-3 bg-stone-50 border-2 border-gray-950 focus:bg-white focus:outline-none transition-all"
                       required
                     />
                   </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-black uppercase tracking-widest text-gray-400">Last Name</label>
                     <input 
-                      type="text" 
+                      type="text"
                       name="last_name"
                       value={formData.last_name}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-200"
-                      placeholder="Johnson"
+                      className="w-full px-4 py-3 bg-stone-50 border-2 border-gray-950 focus:bg-white focus:outline-none transition-all"
                       required
                     />
                   </div>
                 </div>
 
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                <div className="space-y-2">
+                  <label className="text-[10px] font-black uppercase tracking-widest text-gray-400">Email Address</label>
                   <input 
-                    type="email" 
+                    type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-200"
-                    placeholder="sarah@company.com"
+                    className="w-full px-4 py-3 bg-stone-50 border-2 border-gray-950 focus:bg-white focus:outline-none transition-all"
                     required
                   />
                 </div>
 
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Collaboration Type</label>
-                  <div className="relative">
-                    <select 
-                      name="project_type"
-                      value={formData.project_type}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-200 pr-8 appearance-none bg-white"
-                    >
-                      <option value="">Select collaboration type</option>
-                      <option value="fullstack">Full-Stack Development</option>
-                      <option value="ai">AI Integration</option>
-                      <option value="architecture">System Architecture</option>
-                      <option value="leadership">Technical Leadership</option>
-                      <option value="consulting">Consulting</option>
-                      <option value="mentorship">Mentorship</option>
-                    </select>
-                    <div className="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
-                      <i className="ri-arrow-down-s-line text-gray-400"></i>
-                    </div>
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Project Vision</label>
+                <div className="space-y-2">
+                  <label className="text-[10px] font-black uppercase tracking-widest text-gray-400">Message</label>
                   <textarea 
                     name="message"
                     rows={4}
-                    maxLength={500}
                     value={formData.message}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-200 resize-none"
-                    placeholder="Share your technical challenges, goals, and how I can help drive your project forward..."
+                    className="w-full px-4 py-3 bg-stone-50 border-2 border-gray-950 focus:bg-white focus:outline-none transition-all resize-none"
                     required
                   />
-                  <div className="text-xs text-gray-500 mt-2">{formData.message.length}/500 characters</div>
                 </div>
 
                 {submitStatus && (
-                  <div className={`p-4 rounded-lg text-sm ${submitStatus.includes('Thanks') ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
+                  <div className={cn("p-4 font-black uppercase text-[10px] tracking-widest", submitStatus.includes('Thanks') ? 'bg-emerald-50 text-emerald-700' : 'bg-red-50 text-red-700')}>
                     {submitStatus}
-                    {submitStatus.includes('Thanks') && (
-                      <div className="mt-2 text-gray-700">I typically respond to inquiries within 24-48 hours. I look forward to connecting!</div>
-                    )}
                   </div>
                 )}
 
                 <button 
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl whitespace-nowrap cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                  className="w-full bg-red-700 text-white py-5 font-black uppercase tracking-[0.3em] hover:bg-gray-950 transition-all cursor-pointer shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none disabled:opacity-50"
                 >
-                  {isSubmitting ? (
-                    <div className="flex items-center justify-center">
-                      <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
-                      Sending...
-                    </div>
-                  ) : (
-                    'Start Conversation'
-                  )}
+                  {isSubmitting ? 'Sending Message...' : 'Send Inquiry'}
                 </button>
               </form>
             </div>
@@ -770,39 +700,63 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-white border-t border-gray-200 py-12">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row items-center justify-between">
-            <div className="mb-4 md:mb-0">
-              <div className="text-2xl font-bold text-gray-900 mb-2 cursor-pointer" onClick={() => scrollToSection('hero')}>
-                Nikesh<span className="text-indigo-600">T</span>
+      {/* Footer - Japanese Ink Style */}
+      <footer className="bg-gray-950 text-white py-20">
+        <div className="max-w-7xl mx-auto px-8 md:px-12">
+          <div className="flex flex-col md:flex-row items-start justify-between gap-12">
+            <div className="max-w-sm space-y-6">
+              <div className="text-3xl font-black tracking-tighter">
+                NIKESH<span className="text-red-700">T</span>
               </div>
-              <p className="text-gray-600">Engineering solutions that scale with your ambitions</p>
+              <p className="text-stone-400 font-medium leading-relaxed italic">
+                "Where precision logic meets artistic digital vision. Built with passion and purpose."
+              </p>
             </div>
 
-            <div className="flex space-x-4">
-              <a href="https://github.com/nikeshtamangghising" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center hover:bg-indigo-100 transition-all duration-300 hover:scale-110 cursor-pointer group">
-                <i className="ri-github-fill text-gray-600 group-hover:text-indigo-600 transition-colors"></i>
-              </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center hover:bg-indigo-100 transition-all duration-300 hover:scale-110 cursor-pointer group">
-                <i className="ri-linkedin-fill text-gray-600 group-hover:text-indigo-600 transition-colors"></i>
-              </a>
-              <a href="mailto:nikeshtamangghising@gmail.com" className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center hover:bg-indigo-100 transition-all duration-300 hover:scale-110 cursor-pointer group"
-                aria-label="Email Nikesh Tamang"
-              >
-                <i className="ri-mail-line text-gray-600 group-hover:text-indigo-600 transition-colors"></i>
-              </a>
-              <a href="https://buymeacoffee.com/nikeshtamag" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center hover:bg-yellow-100 transition-all duration-300 hover:scale-110 cursor-pointer group"
-                aria-label="Buy Nikesh a Coffee"
-              >
-                <i className="ri-cup-line text-gray-600 group-hover:text-yellow-600 transition-colors"></i>
-              </a>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-12">
+              <div className="space-y-4">
+                <div className="text-[10px] font-black uppercase tracking-[0.3em] text-red-700">Navigation</div>
+                <div className="flex flex-col space-y-2 text-stone-400 font-bold uppercase text-xs tracking-widest">
+                  <button onClick={() => scrollToSection('hero')} className="hover:text-white transition-colors text-left">Home</button>
+                  <button onClick={() => scrollToSection('about')} className="hover:text-white transition-colors text-left">About</button>
+                  <button onClick={() => scrollToSection('projects')} className="hover:text-white transition-colors text-left">Work</button>
+                  <Link href="/blog" className="hover:text-white transition-colors text-left">Blog</Link>
+                </div>
+              </div>
+              
+              <div className="space-y-4">
+                <div className="text-[10px] font-black uppercase tracking-[0.3em] text-red-700">Connect</div>
+                <div className="flex flex-col space-y-2 text-stone-400 font-bold uppercase text-xs tracking-widest">
+                  <a href="https://github.com/nikeshtamangghising" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">GitHub</a>
+                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LinkedIn</a>
+                  <a href="mailto:nikeshtamangghising@gmail.com" className="hover:text-white transition-colors">Email</a>
+                </div>
+              </div>
+
+              <div className="space-y-4 col-span-2 sm:col-span-1">
+                <div className="text-[10px] font-black uppercase tracking-[0.3em] text-red-700">Support</div>
+                <a 
+                  href="https://buymeacoffee.com/nikeshtamag" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-white text-black px-6 py-3 rounded-sm font-black text-[10px] tracking-widest hover:bg-red-700 hover:text-white transition-all shadow-[6px_6px_0px_0px_rgba(185,28,28,1)]"
+                >
+                  <i className="ri-cup-line"></i> BUY COFFEE
+                </a>
+              </div>
             </div>
           </div>
 
-          <div className="border-t border-gray-200 mt-8 pt-8 text-center">
-            <p className="text-gray-500">&copy; 2024 Nikesh Tamang. Built with purpose and precision.</p>
+          <div className="mt-20 pt-10 border-t border-stone-900 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div className="text-[10px] font-black uppercase tracking-[0.5em] text-stone-600">
+              &copy; MMXXIV // NIKESH TAMANG
+            </div>
+            <div className="flex gap-4">
+              <div className="w-2 h-2 bg-red-700 rounded-full animate-pulse"></div>
+              <div className="text-[10px] font-black uppercase tracking-[0.5em] text-stone-600">
+                Crafted in Kathmandu
+              </div>
+            </div>
           </div>
         </div>
       </footer>
