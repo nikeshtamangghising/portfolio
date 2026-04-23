@@ -689,15 +689,7 @@ export default function Home() {
                     </div>
                   </div>
 
-                  <div className="flex items-center space-x-4 hover:bg-white p-4 rounded-lg transition-colors cursor-pointer">
-                    <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center">
-                      <i className="ri-phone-line text-emerald-600"></i>
-                    </div>
-                    <div>
-                      <div className="font-semibold text-gray-900">+977 9869078280</div>
-                      <div className="text-gray-600 text-sm">Available Mon-Fri, flexible hours</div>
-                    </div>
-                  </div>
+
 
                   <div className="flex items-center space-x-4 hover:bg-white p-4 rounded-lg transition-colors cursor-pointer">
                     <div className="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center">
