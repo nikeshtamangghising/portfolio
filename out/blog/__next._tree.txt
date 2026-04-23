@@ -5,4 +5,4 @@
 :HL["/images/projects/ecommerce-platform.jpg","image"]
 :HL["/images/projects/ai-chat-assistant.jpg","image"]
 :HL["/images/projects/task-management.jpg","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"blog","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"S1DhPE4Jm1S1KQ6RWTfAk"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"blog","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"xKlsijnLyuqipIDv7z1KA"}

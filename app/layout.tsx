@@ -21,11 +21,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Nikesh Tamang | Full Stack Developer, AI Engineer, Python & Django Specialist",
     description: "Portfolio of Nikesh Tamang – Full Stack Developer, AI Engineer, and Python/Django Specialist. Explore projects, technical expertise, and testimonials.",
-    url: "https://nikeshtamangghising.github.io/portfolio", // Update to your actual domain if different
+    url: "https://tamangnikesh.com.np",
     siteName: "Nikesh Tamang Portfolio",
     images: [
       {
-        url: "/images/og-image.jpg", // Place a suitable image in public/images/
+        url: "/images/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Nikesh Tamang Portfolio Screenshot"
@@ -36,11 +36,14 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nikesh Tamang | Full Stack Developer, AI Engineer, Python & Django Specialist",
-    description: "Portfolio of Nikesh Tamang – Full Stack Developer, AI Engineer, and Python/Django Specialist. Explore projects, technical expertise, and testimonials.",
+    title: "Nikesh Tamang | Full Stack Developer, AI Engineer",
+    description: "Senior Software Architect specializing in AI, Python, and scalable systems.",
     images: ["/images/og-image.jpg"]
   },
-  metadataBase: new URL("https://nikeshtamangghising.github.io/portfolio") // Update to your actual domain if different
+  metadataBase: new URL("https://tamangnikesh.com.np"),
+  alternates: {
+    canonical: '/',
+  }
 };
 
 export default function RootLayout({

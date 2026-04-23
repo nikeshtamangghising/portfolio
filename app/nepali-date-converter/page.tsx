@@ -85,6 +85,28 @@ export default function ToolsPage() {
   return (
     <div className="min-h-screen bg-[#fcfaf2] text-gray-950">
       <Navbar />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Nepali Date Converter",
+            "operatingSystem": "All",
+            "applicationCategory": "UtilityApplication",
+            "description": "Accurate Nepali Date Converter (AD to BS, BS to AD) and Age Calculator for Bikram Sambat and Gregorian calendars.",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD"
+            },
+            "author": {
+              "@type": "Person",
+              "name": "Nikesh Tamang"
+            }
+          })
+        }}
+      />
       
       <main className="pt-32 pb-24 max-w-7xl mx-auto px-6 md:px-12">
         {/* Header Section */}
