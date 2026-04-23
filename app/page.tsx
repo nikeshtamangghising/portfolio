@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { Navbar } from '@/components/Navbar';
+import { AdUnit } from '@/components/AdUnit';
 import { cn } from '@/lib/utils';
 
 export default function Home() {
@@ -272,6 +273,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <AdUnit />
 
       {/* Skills Section - Japanese Ink Style */}
       <section id="skills" className="py-24 bg-[#fcfaf2]">

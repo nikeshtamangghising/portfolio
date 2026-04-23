@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import ReactMarkdown from 'react-markdown';
 import { FiCalendar } from 'react-icons/fi';
 import { Navbar } from '@/components/Navbar';
+import { AdUnit } from '@/components/AdUnit';
 
 export const dynamicParams = false;
 
@@ -51,6 +52,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             prose-a:text-red-700 prose-a:no-underline prose-a:border-b-2 prose-a:border-red-700/20 hover:prose-a:border-red-700 transition-all">
             <ReactMarkdown>{post.content}</ReactMarkdown>
           </div>
+
+          <AdUnit />
 
           <div className="mt-20 pt-10 border-t-4 border-gray-950 flex flex-col sm:flex-row items-center justify-between gap-8">
             <div className="flex items-center gap-6 text-left">

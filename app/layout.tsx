@@ -1,14 +1,9 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Pacifico } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import 'remixicon/fonts/remixicon.css';
 import { ChatButton } from "@/components/chat/chat-button";
-
-const pacifico = Pacifico({
-  weight: '400',
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-pacifico',
-})
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -59,7 +54,16 @@ export default function RootLayout({
   }
   return (
     <html lang="en" suppressHydrationWarning={true}>
-      <body className={`${geistSans.variable} ${geistMono.variable} ${pacifico.variable} font-sans`}>
+      <head>
+        <meta name="google-adsense-account" content="ca-pub-3352477473738081" />
+        <Script 
+          async 
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3352477473738081"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
+      </head>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased font-sans`}>
         {children}
         <ChatButton />
       </body>

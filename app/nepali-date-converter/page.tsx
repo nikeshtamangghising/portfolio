@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { Navbar } from '@/components/Navbar';
+import { AdUnit } from '@/components/AdUnit';
 import Link from 'next/link';
 import NepaliDate from 'nepali-date-converter';
 import { cn } from '@/lib/utils';
@@ -234,6 +235,8 @@ export default function ToolsPage() {
             </div>
           </div>
         </div>
+
+        <AdUnit />
 
         {/* SEO Content Section */}
         <div className="mt-24 border-t-4 border-gray-950 pt-16 space-y-12 animate-fade-in">
