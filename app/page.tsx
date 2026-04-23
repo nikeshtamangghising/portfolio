@@ -162,77 +162,94 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section id="hero" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 to-indigo-50 pt-20">
-        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-          <div className="space-y-8">
-            <div className="space-y-4">
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-emerald-100 text-emerald-700 text-sm font-medium animate-pulse">
-                <div className="w-2 h-2 bg-emerald-500 rounded-full mr-2 animate-pulse"></div>
-                Currently available
+      {/* Hero Section - Fully Immersive & Responsive Japanese Ink Video Background */}
+      <section id="hero" className="relative min-h-[100dvh] w-full flex items-center bg-[#fcfaf2] overflow-hidden">
+        {/* Background Video Layer - Fully Responsive Object Cover */}
+        <div className="absolute inset-0 z-0">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover z-10"
+          >
+            <source src="/images/hero.mp4" type="video/mp4" />
+          </video>
+
+          {/* Aesthetic Overlays - Adjusted for better video visibility */}
+          <div className="absolute inset-0 z-20 pointer-events-none">
+            {/* Elegant Ink Wash Gradient - Responsive Opacity */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#fcfaf2] via-[#fcfaf2]/30 md:via-[#fcfaf2]/10 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-[#fcfaf2]/80 via-transparent to-transparent md:hidden"></div>
+            
+            {/* Subtle Texture */}
+            <div className="absolute inset-0 opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/handmade-paper.png')]"></div>
+          </div>
+        </div>
+
+        {/* Foreground Content - Robust & Responsive Left Alignment */}
+        <div className="relative z-30 w-full max-w-7xl mx-auto px-8 md:px-12 lg:px-16 pt-20 pb-12">
+          <div className="max-w-3xl space-y-8 md:space-y-12 animate-fade-in-up">
+            <div className="space-y-6 md:space-y-8">
+              <div className="inline-flex items-center px-3 py-1.5 md:px-4 md:py-2 rounded-sm bg-red-700/90 text-white text-[9px] md:text-xs font-black tracking-[0.2em] uppercase transform -skew-x-12 shadow-lg w-fit">
+                <span className="w-1.5 h-1.5 bg-white rounded-full mr-2 md:mr-3 animate-ping"></span>
+                Software Architect
               </div>
 
-              <h1 className="text-5xl md:text-6xl font-bold text-gray-900 leading-tight animate-fade-in-up">
-                Hey, I'm <span className="text-indigo-600">Nikesh</span>
+              <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-gray-950 tracking-tighter leading-[1.1] md:leading-[0.9] drop-shadow-sm">
+                NIKESH <br className="sm:hidden lg:block" />
+                <span className="text-red-700">TAMANG</span>
               </h1>
 
-              <div className="text-xl md:text-2xl text-gray-600 h-12 flex items-center">
-                <span className="mr-2">A passionate</span>
-                <span className="text-indigo-600 font-bold">
+              <div className="text-lg md:text-2xl lg:text-3xl text-gray-800 font-light flex flex-wrap items-center gap-x-2 md:gap-x-4 italic">
+                <span className="opacity-60 tracking-wide uppercase text-[10px] md:text-xs font-black block w-full mb-1 sm:inline sm:w-auto sm:mb-0">Expert In</span>
+                <span className="font-black text-red-600 border-b-2 md:border-b-4 border-red-700/10 pb-0.5 md:pb-1">
                   {currentText}
                   <span className={`${showCursor ? 'opacity-100' : 'opacity-0'} transition-opacity duration-100`}>|</span>
                 </span>
               </div>
 
-              <p className="text-xl text-gray-600 leading-relaxed max-w-lg animate-fade-in-up delay-200">
-                I'm a passionate developer who loves turning ideas into reality through code. 
-                I specialize in Python, Django, and AI technologies, creating web applications 
-                that are both beautiful and functional. From concept to deployment, I bring 
-                your digital vision to life with clean, efficient code.
+              <p className="text-sm md:text-xl lg:text-2xl text-gray-700 leading-relaxed max-w-xl font-medium border-l-2 md:border-l-4 border-red-700/40 pl-4 md:pl-6">
+                Solo developer leveraging <span className="text-red-700 font-black">AI-driven engineering</span> and deep software expertise to build high-performance applications that scale with your vision.
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up delay-300">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 md:gap-8 pt-2 md:pt-4">
               <button 
                 onClick={() => scrollToSection('projects')}
-                className="bg-indigo-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl whitespace-nowrap cursor-pointer"
+                className="px-8 md:px-12 py-4 md:py-5 bg-red-700 text-white rounded-sm font-black text-sm md:text-lg transition-all hover:bg-black cursor-pointer shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] active:translate-x-[2px] active:translate-y-[2px] active:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] whitespace-nowrap text-center"
               >
-                View Portfolio
+                VIEW WORK
               </button>
               <button 
                 onClick={downloadResume}
-                className="border-2 border-indigo-600 text-indigo-600 px-8 py-3 rounded-lg font-semibold hover:bg-indigo-600 hover:text-white transition-all duration-300 whitespace-nowrap cursor-pointer"
+                className="px-8 md:px-12 py-4 md:py-5 bg-white text-black border-2 border-black rounded-sm font-black text-sm md:text-lg hover:bg-stone-50 transition-all cursor-pointer shadow-[6px_6px_0px_0px_rgba(185,28,28,0.3)] active:translate-x-[2px] active:translate-y-[2px] active:shadow-[4px_4px_0px_0px_rgba(185,28,28,0.3)] whitespace-nowrap text-center"
               >
-                Get My Resume
+                RESUME
               </button>
             </div>
 
-            <div className="flex items-center space-x-6 pt-4 animate-fade-in-up delay-400">
-              <a href="https://github.com/nikeshtamangghising" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-white rounded-full shadow-md flex items-center justify-center hover:shadow-lg transition-all duration-300 hover:scale-110 cursor-pointer group"
-                aria-label="GitHub profile of Nikesh Tamang"
-              >
-                <i className="ri-github-fill text-gray-600 group-hover:text-indigo-600 transition-colors"></i>
-              </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-white rounded-full shadow-md flex items-center justify-center hover:shadow-lg transition-all duration-300 hover:scale-110 cursor-pointer group"
-                aria-label="LinkedIn profile of Nikesh Tamang"
-              >
-                <i className="ri-linkedin-fill text-gray-600 group-hover:text-indigo-600 transition-colors"></i>
-              </a>
+            <div className="flex items-center gap-6 md:gap-10 pt-6 md:pt-10">
+              <div className="flex items-center gap-6 md:gap-8 text-2xl md:text-4xl">
+                <a href="https://github.com/nikeshtamangghising" target="_blank" rel="noopener noreferrer" className="text-red-700/30 hover:text-red-700 transition-all hover:scale-110">
+                  <i className="ri-github-fill"></i>
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-red-700/30 hover:text-red-700 transition-all hover:scale-110">
+                  <i className="ri-linkedin-fill"></i>
+                </a>
+              </div>
+              <div className="h-px flex-1 bg-red-700/10"></div>
+              <div className="text-[10px] md:text-xs font-black text-red-700/30 uppercase tracking-[0.4em] hidden sm:block">
+                Architect // 2024
+              </div>
             </div>
           </div>
+        </div>
 
-          <div className="relative animate-fade-in-right">
-            <div className="relative z-10">
-              <img 
-                src="/images/hero.jpg"
-                alt="Nikesh Tamang"
-                className="rounded-2xl shadow-2xl object-cover w-full h-96 md:h-[500px] hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-            <div className="absolute -bottom-6 -right-6 w-full h-full bg-indigo-100 rounded-2xl -z-10"></div>
-            <div className="absolute -top-6 -left-6 w-24 h-24 bg-emerald-200 rounded-full opacity-70 animate-float"></div>
-            <div className="absolute top-1/3 -right-8 w-16 h-16 bg-amber-200 rounded-full opacity-60 animate-float-delay"></div>
-          </div>
+        {/* Minimal Scroll Indicator */}
+        <div className="absolute bottom-6 right-6 lg:right-12 hidden sm:flex flex-col items-center gap-4 opacity-30 hover:opacity-100 transition-opacity">
+          <span className="text-[10px] text-red-700 font-black tracking-[0.6em] uppercase [writing-mode:vertical-lr]">Scroll</span>
+          <div className="w-px h-16 bg-gradient-to-b from-red-700/0 via-red-700 to-red-700/0 animate-shimmer"></div>
         </div>
       </section>
 
