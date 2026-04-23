@@ -498,7 +498,7 @@ export default function Home() {
             <div className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden hover:scale-105 animate-fade-in-up" style={{ animationDelay: '0.2s', animationFillMode: 'both' }}>
               <div className="relative overflow-hidden">
                 <img 
-                  src="/images/projects/task-manager.jpg"
+                  src="/images/projects/task-management.jpg"
                   alt="Screenshot of Task Management App dashboard"
                   className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
                 />
