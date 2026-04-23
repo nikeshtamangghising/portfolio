@@ -1,25 +1,11 @@
 import { projects } from '../../data/projects';
 import Link from 'next/link';
+import { Navbar } from '@/components/Navbar';
 
 export default function ProjectsPage() {
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900">
-      {/* Header (copied from homepage) */}
-      <nav className="fixed top-0 w-full bg-white/85 backdrop-blur-lg border-b border-gray-200 z-50">
-        <div className="max-w-6xl mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <Link href="/" className="text-xl font-bold text-gray-900 cursor-pointer">
-              Nikesh<span className="text-indigo-600">T</span>
-            </Link>
-            <div className="hidden md:flex space-x-8">
-              <Link href="/#about" className="text-gray-600 hover:text-indigo-600 transition-colors cursor-pointer">About</Link>
-              <Link href="/#skills" className="text-gray-600 hover:text-indigo-600 transition-colors cursor-pointer">Expertise</Link>
-              <Link href="/#projects" className="text-gray-600 hover:text-indigo-600 transition-colors cursor-pointer">Portfolio</Link>
-              <Link href="/#contact" className="text-gray-600 hover:text-indigo-600 transition-colors cursor-pointer">Contact</Link>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <Navbar />
       <div className="pt-24 pb-12">
         <section className="py-12 bg-white min-h-screen">
           <div className="max-w-6xl mx-auto px-6">

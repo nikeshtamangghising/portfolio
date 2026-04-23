@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import ReactMarkdown from 'react-markdown';
 import { FiCalendar } from 'react-icons/fi';
+import { Navbar } from '@/components/Navbar';
 
 export const dynamicParams = false;
 
@@ -16,19 +17,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   if (!post) return notFound();
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-indigo-50 text-gray-900">
-      <nav className="fixed top-0 w-full bg-white/85 backdrop-blur-lg border-b border-gray-200 z-50">
-        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-          <div className="text-xl font-bold text-gray-900 cursor-pointer">
-            <Link href="/">Nikesh<span className="text-indigo-600">T</span></Link>
-          </div>
-          <div className="hidden md:flex space-x-8">
-            <Link href="/" className="text-gray-600 hover:text-indigo-600 transition-colors cursor-pointer">Home</Link>
-            <Link href="/blog" className="text-indigo-600 font-semibold cursor-pointer">Blog</Link>
-            <Link href="/projects" className="text-gray-600 hover:text-indigo-600 transition-colors cursor-pointer">Projects</Link>
-            <Link href="#contact" className="text-gray-600 hover:text-indigo-600 transition-colors cursor-pointer">Contact</Link>
-          </div>
-        </div>
-      </nav>
+      <Navbar />
       <main className="pt-32 pb-20 max-w-2xl mx-auto px-4 sm:px-6">
         <div className="mb-8">
           <Link href="/blog" className="text-indigo-600 hover:underline inline-flex items-center mb-4">

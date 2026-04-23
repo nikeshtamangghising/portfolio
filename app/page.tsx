@@ -1,13 +1,12 @@
-
 'use client';
 
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import { Navbar } from '@/components/Navbar';
 
 export default function Home() {
   const [currentText, setCurrentText] = useState('');
   const [showCursor, setShowCursor] = useState(true);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState('');
   const [formData, setFormData] = useState({
@@ -62,7 +61,6 @@ export default function Home() {
         behavior: 'smooth'
       });
     }
-    setIsMenuOpen(false);
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -120,48 +118,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900">
-      {/* Clean Navigation */}
-      <nav className="fixed top-0 w-full bg-white/85 backdrop-blur-lg border-b border-gray-200 z-50">
-        <div className="max-w-6xl mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <div className="text-xl font-bold text-gray-900 cursor-pointer" onClick={() => scrollToSection('hero')}>
-              Nikesh<span className="text-indigo-600">T</span>
-            </div>
-
-            {/* Desktop Menu */}
-            <div className="hidden md:flex space-x-8">
-              <button onClick={() => scrollToSection('about')} className="text-gray-600 hover:text-indigo-600 transition-colors cursor-pointer">About</button>
-              <button onClick={() => scrollToSection('skills')} className="text-gray-600 hover:text-indigo-600 transition-colors cursor-pointer">Expertise</button>
-              <button onClick={() => scrollToSection('projects')} className="text-gray-600 hover:text-indigo-600 transition-colors cursor-pointer">Portfolio</button>
-              <Link href="/blog" className="text-gray-600 hover:text-indigo-600 transition-colors cursor-pointer flex items-center">Blog</Link>
-              <button onClick={() => scrollToSection('contact')} className="text-gray-600 hover:text-indigo-600 transition-colors cursor-pointer">Contact</button>
-            </div>
-
-            {/* Mobile Menu Button */}
-            <button 
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden w-8 h-8 flex items-center justify-center cursor-pointer hover:bg-gray-100 rounded-lg transition-colors"
-              aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
-            >
-              <i className={`ri-${isMenuOpen ? 'close' : 'menu'}-line text-gray-600`}></i>
-            </button>
-          </div>
-
-          {/* Mobile Menu */}
-          {isMenuOpen && (
-            <div className="md:hidden mt-4 py-4 border-t border-gray-200 animate-fade-in">
-              <div className="flex flex-col space-y-4">
-                <button onClick={() => scrollToSection('about')} className="text-left text-gray-600 hover:text-indigo-600 transition-colors cursor-pointer py-2">About</button>
-                <button onClick={() => scrollToSection('skills')} className="text-left text-gray-600 hover:text-indigo-600 transition-colors cursor-pointer py-2">Expertise</button>
-                <button onClick={() => scrollToSection('projects')} className="text-left text-gray-600 hover:text-indigo-600 transition-colors cursor-pointer py-2">Portfolio</button>
-                <Link href="/blog" className="text-left text-gray-600 hover:text-indigo-600 transition-colors cursor-pointer py-2 flex items-center">Blog</Link>
-                <button onClick={() => scrollToSection('contact')} className="text-left text-gray-600 hover:text-indigo-600 transition-colors cursor-pointer py-2">Contact</button>
-              </div>
-            </div>
-          )}
-        </div>
-      </nav>
-
+      <Navbar />
       {/* Hero Section - Fully Immersive & Responsive Japanese Ink Video Background */}
       <section id="hero" className="relative min-h-[100dvh] w-full flex items-center bg-[#fcfaf2] overflow-hidden">
         {/* Background Video Layer - Fully Responsive Object Cover */}
