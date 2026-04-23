@@ -4,12 +4,15 @@ import { notFound } from 'next/navigation';
 import ReactMarkdown from 'react-markdown';
 import { FiCalendar } from 'react-icons/fi';
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return blogPosts.map(post => ({ slug: post.slug }));
 }
 
-export default function BlogPostPage({ params }: { params: { slug: string } }) {
-  const post = blogPosts.find(p => p.slug === params.slug);
+export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const post = blogPosts.find(p => p.slug === slug);
   if (!post) return notFound();
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-indigo-50 text-gray-900">

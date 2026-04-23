@@ -218,7 +218,13 @@ export function Chat({ onError, onClose }: ChatProps & { onClose?: () => void })
       const response = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: content }),
+        body: JSON.stringify({ 
+          message: content,
+          history: messages.map(msg => ({
+            role: msg.role === 'assistant' ? 'model' : 'user',
+            parts: [{ text: msg.content }]
+          }))
+        }),
       });
 
       if (!response.ok) {
@@ -265,8 +271,8 @@ export function Chat({ onError, onClose }: ChatProps & { onClose?: () => void })
     }
   };
 
-  // Check if OpenRouter API key is configured
-  const isApiKeyConfigured = process.env.NEXT_PUBLIC_OPENROUTER_API_KEY;
+  // Check if Gemini API key is configured
+  const isApiKeyConfigured = process.env.NEXT_PUBLIC_GEMINI_API_KEY;
   
   if (!isMounted) return null;
   
@@ -283,7 +289,7 @@ export function Chat({ onError, onClose }: ChatProps & { onClose?: () => void })
         </div>
         <div className="ml-3">
           <p className="text-sm text-yellow-700 dark:text-yellow-300">
-            <span className="font-medium">Chat functionality is limited</span> - Please set the <code className="bg-yellow-100 dark:bg-yellow-800 px-1 rounded">NEXT_PUBLIC_OPENROUTER_API_KEY</code> environment variable to enable full chat capabilities.
+            <span className="font-medium">Chat functionality is limited</span> - Please set the <code className="bg-yellow-100 dark:bg-yellow-800 px-1 rounded">NEXT_PUBLIC_GEMINI_API_KEY</code> environment variable to enable full chat capabilities.
           </p>
         </div>
       </div>

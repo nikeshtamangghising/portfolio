@@ -1,23 +1,15 @@
 import { NextResponse } from 'next/server';
-import OpenAI from 'openai';
+import { GoogleGenerativeAI } from '@google/generative-ai';
 
-// Initialize OpenAI client for OpenRouter
-const openai = new OpenAI({
-  baseURL: 'https://openrouter.ai/api/v1',
-  apiKey: process.env.OPENROUTER_API_KEY || process.env.NEXT_PUBLIC_OPENROUTER_API_KEY,
-  defaultHeaders: {
-    'HTTP-Referer': process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000',
-    'X-Title': process.env.NEXT_PUBLIC_SITE_NAME || 'Portfolio Chat',
-    'Content-Type': 'application/json'
-  },
-});
+// Initialize Google Generative AI
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || '');
 
 // Get model from environment variable or use default
-const CHAT_MODEL = process.env.NEXT_PUBLIC_OPENROUTER_MODEL || 'tngtech/deepseek-r1t2-chimera:free';
+const CHAT_MODEL = process.env.NEXT_PUBLIC_GEMINI_MODEL || 'gemini-1.5-flash';
 
 export async function POST(req: Request) {
   try {
-    const { message } = await req.json();
+    const { message, history } = await req.json();
 
     if (!message) {
       return NextResponse.json(
@@ -26,36 +18,36 @@ export async function POST(req: Request) {
       );
     }
 
-    const completion = await openai.chat.completions.create({
+    const model = genAI.getGenerativeModel({ 
       model: CHAT_MODEL,
-      messages: [
-        {
-          role: 'system',
-          content: 'You are a helpful assistant embedded in a portfolio website. Keep responses concise and professional.',
-        },
-        { role: 'user', content: message },
-      ],
-      temperature: 0.7,
+      systemInstruction: `You are the personal AI assistant of Nikesh Tamang, a Senior Software Architect and Solo Developer. 
+      Nikesh specializes in Python, Django, React, and AI-driven engineering.
+      Your goal is to represent Nikesh to visitors on his portfolio website.
+      Be professional, helpful, and concise. 
+      You should talk about Nikesh's expertise, his projects, and his approach to building high-performance applications using AI tools.
+      If someone asks who you are, explain that you are Nikesh's personal AI assistant.
+      Keep the tone friendly but sophisticated.`,
     });
-    
+
+    // Handle chat history if provided
+    const chat = model.startChat({
+      history: history || [],
+    });
+
+    const result = await chat.sendMessage(message);
+    const response = result.response.text();
+
     // Debug logging if enabled
     if (process.env.NEXT_PUBLIC_DEBUG_MODE === 'true') {
-      console.log('OpenRouter Request:', {
+      console.log('Gemini Request:', {
         model: CHAT_MODEL,
         message: message.substring(0, 100) + (message.length > 100 ? '...' : '')
       });
-      console.log('OpenRouter Response:', {
-        id: completion.id,
-        model: completion.model,
-        usage: completion.usage
-      });
     }
-
-    const response = completion.choices[0]?.message?.content || 'Sorry, I could not process your request.';
 
     return NextResponse.json({ response });
   } catch (error) {
-    console.error('OpenRouter API error:', error);
+    console.error('Gemini API error:', error);
     return NextResponse.json(
       { error: 'Error processing your request' },
       { status: 500 }

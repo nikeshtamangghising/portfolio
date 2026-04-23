@@ -53,9 +53,9 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // Add environment variable check for OpenRouter API key
-  if (!process.env.NEXT_PUBLIC_OPENROUTER_API_KEY) {
-    console.warn('Warning: NEXT_PUBLIC_OPENROUTER_API_KEY is not set. Chat functionality will be disabled.');
+  // Add environment variable check for Gemini API key
+  if (!process.env.NEXT_PUBLIC_GEMINI_API_KEY) {
+    console.warn('Warning: NEXT_PUBLIC_GEMINI_API_KEY is not set. Chat functionality will be disabled.');
   }
   return (
     <html lang="en" suppressHydrationWarning={true}>
