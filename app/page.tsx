@@ -334,256 +334,57 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Skills Section */}
-      <section id="skills" className="py-20 bg-slate-50">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-indigo-100 text-indigo-700 text-sm font-medium mb-4">
-              <i className="ri-tools-line mr-2"></i>
-              Technical Expertise
+      {/* Testimonials Section - Japanese Ink Style */}
+      <section id="testimonials" className="py-24 bg-white">
+        <div className="max-w-4xl mx-auto px-8 md:px-12">
+          <div className="text-center mb-20 space-y-4">
+            <div className="inline-flex items-center px-4 py-1 rounded-sm bg-stone-100 text-stone-600 text-[10px] font-black tracking-[0.3em] uppercase transform -skew-x-12">
+              Feedback
             </div>
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">What I Do Best</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              A mix of frontend creativity and backend logic, with a passion for clean, efficient code
-            </p>
+            <h2 className="text-4xl md:text-6xl font-black text-gray-950 tracking-tighter">
+              Client <span className="text-red-700">Echoes</span>
+            </h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-              <div className="w-16 h-16 bg-indigo-100 rounded-xl flex items-center justify-center mb-6">
-                <i className="ri-window-line text-2xl text-indigo-600"></i>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Frontend Development</h3>
-              <p className="text-gray-600 mb-6">Creating responsive, user-friendly interfaces that look great and work smoothly across all devices.</p>
-              <p className="italic text-gray-500 mb-4">Example: Built a dynamic product dashboard for an e-commerce site using React and Next.js, improving user engagement and SEO.</p>
-              <div className="space-y-3">
-                <div className="flex justify-between items-center">
-                  <span className="text-sm text-gray-700">React & Next.js</span>
-                  <div className="flex-1 mx-3 bg-gray-200 rounded-full h-2">
-                    <div className="bg-indigo-600 h-2 rounded-full w-10/12"></div>
-                  </div>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-sm text-gray-700">HTML/CSS/JavaScript</span>
-                  <div className="flex-1 mx-3 bg-gray-200 rounded-full h-2">
-                    <div className="bg-indigo-600 h-2 rounded-full w-11/12"></div>
-                  </div>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-sm text-gray-700">Tailwind CSS</span>
-                  <div className="flex-1 mx-3 bg-gray-200 rounded-full h-2">
-                    <div className="bg-indigo-600 h-2 rounded-full w-9/12"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-              <div className="w-16 h-16 bg-emerald-100 rounded-xl flex items-center justify-center mb-6">
-                <i className="ri-database-2-line text-2xl text-emerald-600"></i>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Backend Development</h3>
-              <p className="text-gray-600 mb-6">Building robust APIs and server-side logic that powers modern web applications with Python and Django.</p>
-              <p className="italic text-gray-500 mb-4">Example: Designed and implemented RESTful APIs with Django REST Framework, enabling secure data exchange and efficient order processing for a multi-vendor platform.</p>
-              <div className="space-y-3">
-                <div className="flex justify-between items-center">
-                  <span className="text-sm text-gray-700">Python & Django</span>
-                  <div className="flex-1 mx-3 bg-gray-200 rounded-full h-2">
-                  <div className="bg-emerald-600 h-2 rounded-full w-11/12"></div>
-                  </div>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-sm text-gray-700">REST APIs</span>
-                  <div className="flex-1 mx-3 bg-gray-200 rounded-full h-2">
-                    <div className="bg-emerald-600 h-2 rounded-full w-10/12"></div>
-                  </div>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-sm text-gray-700">Database Design</span>
-                  <div className="flex-1 mx-3 bg-gray-200 rounded-full h-2">
-                    <div className="bg-emerald-600 h-2 rounded-full w-9/12"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-              <div className="w-16 h-16 bg-amber-100 rounded-xl flex items-center justify-center mb-6">
-                <i className="ri-rocket-line text-2xl text-amber-600"></i>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Tools & Technologies</h3>
-              <p className="text-gray-600 mb-6">Using modern tools and platforms to build, deploy, and maintain web applications efficiently.</p>
-              <p className="italic text-gray-500 mb-4">Example: Integrated OpenAI APIs for a customer support chatbot, and deployed full-stack apps to Vercel for seamless CI/CD and global performance.</p>
-              <div className="space-y-3">
-                <div className="flex justify-between items-center">
-                  <span className="text-sm text-gray-700">Git & GitHub</span>
-                  <div className="flex-1 mx-3 bg-gray-200 rounded-full h-2">
-                    <div className="bg-amber-600 h-2 rounded-full w-11/12"></div>
-                  </div>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-sm text-gray-700">Vercel & Netlify</span>
-                  <div className="flex-1 mx-3 bg-gray-200 rounded-full h-2">
-                    <div className="bg-amber-600 h-2 rounded-full w-10/12"></div>
-                  </div>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-sm text-gray-700">AI Integration</span>
-                  <div className="flex-1 mx-3 bg-gray-200 rounded-full h-2">
-                    <div className="bg-amber-600 h-2 rounded-full w-9/12"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Projects Section - Japanese Ink Style */}
-      <section id="projects" className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-8 md:px-12">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8 text-left">
-            <div className="space-y-4">
-              <div className="inline-flex items-center px-4 py-1 rounded-sm bg-stone-100 text-stone-600 text-[10px] font-black tracking-[0.3em] uppercase transform -skew-x-12">
-                Selected Works
-              </div>
-              <h2 className="text-4xl md:text-6xl font-black text-gray-950 tracking-tighter">
-                Project <span className="text-red-700">Portfolio</span>
-              </h2>
-            </div>
-            <p className="text-lg text-gray-600 max-w-md font-medium">
-              A collection of high-performance systems and creative digital solutions.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+          <div className="grid md:grid-cols-2 gap-12">
             {[
               {
-                title: "E-Commerce Platform",
-                image: "/images/projects/ecommerce-platform.jpg",
-                desc: "A full-featured online store with user authentication, product management, and payment integration.",
-                tags: ["Django", "React", "PostgreSQL"],
-                link: "https://ecommerce-platform.com"
+                text: "Nikesh is a highly skilled developer who delivered our project on time and exceeded our expectations. His attention to detail and problem-solving skills are top-notch.",
+                author: "A. Sharma",
+                role: "Product Manager, TechFlow"
               },
               {
-                title: "Task Management App",
-                image: "/images/projects/task-management.jpg",
-                desc: "Real-time task tracking system with collaboration features and automated workflow triggers.",
-                tags: ["Next.js", "Redis", "WebSockets"],
-                link: "https://task-management.com"
+                text: "Working with Nikesh was a fantastic experience. He communicates clearly, writes clean code, and always finds creative solutions to tough problems.",
+                author: "S. Lama",
+                role: "Team Lead, Everest Solutions"
               },
               {
-                title: "AI Chat Assistant",
-                image: "/images/projects/ai-chat-assistant.jpg",
-                desc: "Intelligent chatbot integrated with OpenAI's GPT models for context-aware customer support.",
-                tags: ["Python", "OpenAI", "React"],
-                link: "https://ai-assistant.com"
+                text: "Nikesh’s expertise in Django and React helped us launch our MVP in record time. He’s proactive, reliable, and a true team player.",
+                author: "M. Gurung",
+                role: "CTO, StartupHub"
+              },
+              {
+                text: "I was impressed by Nikesh’s ability to break down complex problems and deliver elegant solutions. He’s a pleasure to work with and always goes the extra mile.",
+                author: "R. Karki",
+                role: "Project Lead, CodeCrafters"
               }
-            ].map((project, idx) => (
-              <div key={idx} className="group relative bg-[#fcfaf2] border-4 border-gray-950 overflow-hidden shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] animate-fade-in-up" style={{ animationDelay: `${0.1 * idx}s`, animationFillMode: 'both' }}>
-                <div className="relative h-56 overflow-hidden border-b-4 border-gray-950">
-                  <img 
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100"
-                  />
-                  <div className="absolute inset-0 bg-red-700/10 mix-blend-multiply opacity-60 group-hover:opacity-0 transition-opacity"></div>
-                </div>
-                <div className="p-8">
-                  <h3 className="text-2xl font-black text-gray-950 mb-3 uppercase tracking-tighter">{project.title}</h3>
-                  <p className="text-gray-600 mb-6 text-sm font-medium leading-relaxed">{project.desc}</p>
-                  <div className="flex flex-wrap gap-2 mb-8">
-                    {project.tags.map((tag) => (
-                      <span key={tag} className="px-3 py-1 bg-white border-2 border-gray-950 text-gray-950 text-[10px] font-black uppercase tracking-widest">{tag}</span>
-                    ))}
+            ].map((t, idx) => (
+              <div key={idx} className="relative bg-[#fcfaf2] border-4 border-gray-950 p-10 shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] animate-fade-in-up" style={{ animationDelay: `${0.1 * idx}s`, animationFillMode: 'both' }}>
+                <i className="ri-double-quotes-l text-4xl text-red-700/20 absolute top-6 left-6"></i>
+                <p className="relative z-10 text-gray-700 text-lg font-medium mb-8 leading-relaxed italic">
+                  “{t.text}”
+                </p>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-gray-950 rounded-sm flex items-center justify-center text-white font-black text-xl">
+                    {t.author[0]}
                   </div>
-                  <a 
-                    href={project.link} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="inline-flex items-center text-xs font-black uppercase tracking-[0.2em] text-red-700 hover:text-black transition-colors group/btn"
-                  >
-                    View Project 
-                    <i className="ri-arrow-right-up-line ml-2 transform group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform"></i>
-                  </a>
+                  <div>
+                    <div className="font-black text-gray-950 uppercase tracking-wider text-sm">{t.author}</div>
+                    <div className="text-red-700 text-[10px] font-black uppercase tracking-widest">{t.role}</div>
+                  </div>
                 </div>
               </div>
             ))}
-          </div>
-          
-          <div className="mt-20 text-center">
-            <Link 
-              href="/projects" 
-              className="inline-block px-12 py-5 bg-gray-950 text-white rounded-sm font-black text-sm uppercase tracking-[0.3em] shadow-[8px_8px_0px_0px_rgba(185,28,28,1)] hover:shadow-none hover:translate-x-[8px] hover:translate-y-[8px] transition-all"
-            >
-              See All Projects
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section id="testimonials" className="py-20 bg-slate-50">
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-emerald-100 text-emerald-700 text-sm font-medium mb-4">
-              <i className="ri-chat-quote-line mr-2"></i>
-              Testimonials
-            </div>
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">What People Say</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">Feedback from clients and collaborators</p>
-          </div>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white rounded-2xl shadow-lg p-8 flex flex-col animate-fade-in-up" style={{ animationDelay: '0.1s', animationFillMode: 'both' }}>
-              <p className="text-gray-700 text-lg mb-4">“Nikesh is a highly skilled developer who delivered our project on time and exceeded our expectations. His attention to detail and problem-solving skills are top-notch.”</p>
-              <div className="flex items-center mt-auto">
-                <div className="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center mr-3">
-                  <i className="ri-user-3-line text-indigo-600"></i>
-                </div>
-                <div>
-                  <div className="font-semibold text-gray-900">A. Sharma</div>
-                  <div className="text-gray-500 text-xs">Product Manager, TechFlow</div>
-                </div>
-              </div>
-            </div>
-            <div className="bg-white rounded-2xl shadow-lg p-8 flex flex-col animate-fade-in-up" style={{ animationDelay: '0.2s', animationFillMode: 'both' }}>
-              <p className="text-gray-700 text-lg mb-4">“Working with Nikesh was a fantastic experience. He communicates clearly, writes clean code, and always finds creative solutions to tough problems.”</p>
-              <div className="flex items-center mt-auto">
-                <div className="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center mr-3">
-                  <i className="ri-user-3-line text-indigo-600"></i>
-                </div>
-                <div>
-                  <div className="font-semibold text-gray-900">S. Lama</div>
-                  <div className="text-gray-500 text-xs">Team Lead, Everest Solutions</div>
-                </div>
-              </div>
-            </div>
-            {/* New Feedback Card 1 */}
-            <div className="bg-white rounded-2xl shadow-lg p-8 flex flex-col animate-fade-in-up" style={{ animationDelay: '0.3s', animationFillMode: 'both' }}>
-              <p className="text-gray-700 text-lg mb-4">“Nikesh’s expertise in Django and React helped us launch our MVP in record time. He’s proactive, reliable, and a true team player.”</p>
-              <div className="flex items-center mt-auto">
-                <div className="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center mr-3">
-                  <i className="ri-user-3-line text-indigo-600"></i>
-                </div>
-                <div>
-                  <div className="font-semibold text-gray-900">M. Gurung</div>
-                  <div className="text-gray-500 text-xs">CTO, StartupHub</div>
-                </div>
-              </div>
-            </div>
-            {/* New Feedback Card 2 */}
-            <div className="bg-white rounded-2xl shadow-lg p-8 flex flex-col animate-fade-in-up" style={{ animationDelay: '0.4s', animationFillMode: 'both' }}>
-              <p className="text-gray-700 text-lg mb-4">“I was impressed by Nikesh’s ability to break down complex problems and deliver elegant solutions. He’s a pleasure to work with and always goes the extra mile.”</p>
-              <div className="flex items-center mt-auto">
-                <div className="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center mr-3">
-                  <i className="ri-user-3-line text-indigo-600"></i>
-                </div>
-                <div>
-                  <div className="font-semibold text-gray-900">R. Karki</div>
-                  <div className="text-gray-500 text-xs">Project Lead, CodeCrafters</div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
