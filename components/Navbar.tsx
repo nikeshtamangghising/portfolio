@@ -42,6 +42,7 @@ export function Navbar() {
     { label: 'Expertise', id: 'skills' },
     { label: 'Portfolio', id: 'projects' },
     { label: 'Blog', href: '/blog' },
+    { label: 'Tools', href: '/tools' },
     { label: 'Contact', id: 'contact' },
   ];
 
