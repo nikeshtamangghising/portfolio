@@ -9,6 +9,7 @@ import { ChatProps } from '@/types/chat';
 import { loadMessages, saveMessages } from '@/lib/storage';
 import { Bot, User, Loader2, SendHorizontal, AlertCircle, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { GoogleGenerativeAI } from '@google/generative-ai';
 
 type Message = {
   id: string;
@@ -215,27 +216,33 @@ export function Chat({ onError, onClose }: ChatProps & { onClose?: () => void })
     setIsLoading(true);
     
     try {
-      const response = await fetch('/api/chat', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ 
-          message: content,
-          history: messages.map(msg => ({
-            role: msg.role === 'assistant' ? 'model' : 'user',
-            parts: [{ text: msg.content }]
-          }))
-        }),
+      // Initialize Gemini directly on client-side for static export support (GitHub Pages)
+      const genAI = new GoogleGenerativeAI(process.env.NEXT_PUBLIC_GEMINI_API_KEY || '');
+      const model = genAI.getGenerativeModel({ 
+        model: process.env.NEXT_PUBLIC_GEMINI_MODEL || 'gemini-flash-latest',
+        systemInstruction: `You are the personal AI assistant of Nikesh Tamang, a Senior Software Architect and Solo Developer. 
+        Nikesh specializes in Python, Django, React, and AI-driven engineering.
+        Your goal is to represent Nikesh to visitors on his portfolio website.
+        Be professional, helpful, and concise. 
+        You should talk about Nikesh's expertise, his projects, and his approach to building high-performance applications using AI tools.
+        If someone asks who you are, explain that you are Nikesh's personal AI assistant.
+        Keep the tone friendly but sophisticated.`,
       });
 
-      if (!response.ok) {
-        throw new Error(`Error: ${response.status}`);
-      }
+      const chat = model.startChat({
+        history: messages.map(msg => ({
+          role: msg.role === 'assistant' ? 'model' : 'user',
+          parts: [{ text: msg.content }]
+        })),
+      });
 
-      const data = await response.json();
+      const result = await chat.sendMessage(content);
+      const responseText = result.response.text();
+
       const assistantMessage: Message = {
         id: generateId(),
         role: 'assistant',
-        content: data.response || 'Sorry, I encountered an error.',
+        content: responseText || 'Sorry, I encountered an error.',
         timestamp: Date.now()
       };
       
@@ -248,7 +255,7 @@ export function Chat({ onError, onClose }: ChatProps & { onClose?: () => void })
       });
       
     } catch (error) {
-      console.error('Error:', error);
+      console.error('Gemini Client Error:', error);
       setError('Failed to send message. Please try again.');
       
       // Add error message
