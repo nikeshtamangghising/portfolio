@@ -836,6 +836,11 @@ export default function Home() {
               >
                 <i className="ri-mail-line text-gray-600 group-hover:text-indigo-600 transition-colors"></i>
               </a>
+              <a href="https://buymeacoffee.com/nikeshtamag" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center hover:bg-yellow-100 transition-all duration-300 hover:scale-110 cursor-pointer group"
+                aria-label="Buy Nikesh a Coffee"
+              >
+                <i className="ri-cup-line text-gray-600 group-hover:text-yellow-600 transition-colors"></i>
+              </a>
             </div>
           </div>
 

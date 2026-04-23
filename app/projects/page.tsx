@@ -73,17 +73,17 @@ export default function ProjectsPage() {
               <p className="text-gray-600">Engineering solutions that scale with your ambitions</p>
             </div>
             <div className="flex space-x-4">
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center hover:bg-indigo-100 transition-all duration-300 hover:scale-110 cursor-pointer group">
+              <a href="https://github.com/nikeshtamangghising" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center hover:bg-indigo-100 transition-all duration-300 hover:scale-110 cursor-pointer group">
                 <i className="ri-github-fill text-gray-600 group-hover:text-indigo-600 transition-colors"></i>
               </a>
               <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center hover:bg-indigo-100 transition-all duration-300 hover:scale-110 cursor-pointer group">
                 <i className="ri-linkedin-fill text-gray-600 group-hover:text-indigo-600 transition-colors"></i>
               </a>
-              <a href="https://stackoverflow.com" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center hover:bg-indigo-100 transition-all duration-300 hover:scale-110 cursor-pointer group">
-                <i className="ri-stack-overflow-line text-gray-600 group-hover:text-indigo-600 transition-colors"></i>
-              </a>
               <a href="mailto:nikeshtamangghising@gmail.com" className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center hover:bg-indigo-100 transition-all duration-300 hover:scale-110 cursor-pointer group">
                 <i className="ri-mail-line text-gray-600 group-hover:text-indigo-600 transition-colors"></i>
+              </a>
+              <a href="https://buymeacoffee.com/nikeshtamag" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center hover:bg-yellow-100 transition-all duration-300 hover:scale-110 cursor-pointer group" aria-label="Buy Nikesh a Coffee">
+                <i className="ri-cup-line text-gray-600 group-hover:text-yellow-600 transition-colors"></i>
               </a>
             </div>
           </div>
