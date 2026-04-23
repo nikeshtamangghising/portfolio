@@ -58,9 +58,9 @@ export function Navbar() {
             className="text-2xl font-black text-gray-950 cursor-pointer flex items-center group" 
             onClick={() => scrollToSection('hero')}
           >
-            <span className="tracking-tighter">NIKESH</span>
-            <span className="text-red-700 ml-1 transform group-hover:rotate-12 transition-transform">T</span>
-            <div className="ml-2 w-2 h-2 bg-red-700 rounded-full animate-pulse hidden md:block"></div>
+            <span className="tracking-tighter uppercase">Nikesh</span>
+            <span className="text-red-700 ml-2 uppercase transform group-hover:rotate-6 transition-transform">Tamang</span>
+            <div className="ml-3 w-2 h-2 bg-red-700 rounded-full animate-pulse hidden md:block"></div>
           </div>
 
           {/* Desktop Menu */}

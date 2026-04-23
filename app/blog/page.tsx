@@ -78,8 +78,8 @@ export default function Blog() {
         <div className="max-w-7xl mx-auto px-8 md:px-12">
           <div className="flex flex-col md:flex-row items-start justify-between gap-12">
             <div className="max-w-sm space-y-6">
-              <div className="text-3xl font-black tracking-tighter">
-                NIKESH<span className="text-red-700">T</span>
+              <div className="text-3xl font-black tracking-tighter uppercase">
+                Nikesh<span className="text-red-700"> Tamang</span>
               </div>
               <p className="text-stone-400 font-medium leading-relaxed italic">
                 "Where precision logic meets artistic digital vision. Built with passion and purpose."
